@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Azure_Client_ID__c</fullName>
+    <description>Client ID from the Azure application - get from ASTM IT Team - similar to 61c231f5-b694-1234-92e4-e2ea2b89944c</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Client ID from the Azure application - get from ASTM IT Team - similar to 61c231f5-b694-1234-92e4-e2ea2b89944c</inlineHelpText>
+    <label>Azure Client ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

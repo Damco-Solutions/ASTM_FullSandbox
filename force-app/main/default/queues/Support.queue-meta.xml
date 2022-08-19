@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>support@astm.org</email>
+    <name>Support</name>
+    <queueMembers>
+        <users>
+            <user>amakoid@astm.org</user>
+            <user>arosario@astm.org</user>
+            <user>akorniliev@astm.org</user>
+            <user>bjaindl@astm.org</user>
+            <user>cmarkun@astm.org</user>
+            <user>dfranco@astm.org</user>
+            <user>gcrone@astm.org</user>
+            <user>jgates@astm.org</user>
+            <user>jgallagh@astm.org</user>
+            <user>mreese@astm.org</user>
+            <user>nhouck@astm.org</user>
+            <user>olugo@astm.org</user>
+            <user>pfluehr@astm.org</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Support</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,43 @@
+<!--
+ - Created by johnpernock from OpenGate Consulting on 2019-08-26.
+ -->
+
+<aura:component description="OracleOrderHistoryComponent" controller="OracleOrderHistoryController" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,force:lightningQuickAction">
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="showRoyaltyPaymentsOnly" type="Boolean" default="false" />
+    <aura:attribute name="titleText" type="String"/>
+    <aura:attribute name="showNoData" type="Boolean" default="false"/>
+    <aura:attribute name="showNotice" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.initAction}"/>
+    <lightning:card class="slds-card_boundary" title="{!v.titleText}">
+    <div style="min-height: 200px;" class="slds-scrollable_x slds-scrollable_y">
+        <lightning:spinner variant="brand" size="large" aura:id="load_spinner" class="slds-hide" />
+        <aura:if isTrue="{!v.data.length}">
+            <lightning:datatable keyField="OrderNo" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true"/>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!v.showNoData}">
+                        <aura:if isTrue="{!v.showRoyaltyPaymentsOnly}">
+                            <div class="slds-illustration slds-illustration_large" aria-hidden="true">
+                                <img src="/img/chatter/OpenRoad.svg" class="slds-illustration__svg" alt=""/>
+                                <div class="slds-text-color_weak">
+                                    <h3 class="slds-text-heading_medium">No Royalty Payments</h3>
+                                </div>
+                            </div>
+                            <aura:set attribute="Else">
+                                <div class="slds-illustration slds-illustration_large" aria-hidden="true">
+                                    <img src="/img/chatter/Desert.svg" class="slds-illustration__svg" alt=""/>
+                                    <div class="slds-text-color_weak">
+                                        <h3 class="slds-text-heading_medium">No Oracle Order History</h3>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+
+                </aura:if>
+            </aura:set>
+        </aura:if>
+        <lightning:notificationsLibrary aura:id="notifLib"/>
+    </div>
+    </lightning:card>
+</aura:component>

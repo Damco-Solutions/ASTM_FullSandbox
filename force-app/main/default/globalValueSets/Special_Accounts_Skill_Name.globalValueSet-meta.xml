@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AATCC</fullName>
+        <default>false</default>
+        <label>AATCC</label>
+    </customValue>
+    <customValue>
+        <fullName>Amazon.com</fullName>
+        <default>false</default>
+        <label>Amazon.com</label>
+    </customValue>
+    <customValue>
+        <fullName>Beijing LLC</fullName>
+        <default>false</default>
+        <label>Beijing LLC</label>
+    </customValue>
+    <customValue>
+        <fullName>Beuth Verlag Gmbh</fullName>
+        <default>false</default>
+        <label>Beuth Verlag Gmbh</label>
+    </customValue>
+    <customValue>
+        <fullName>BSB Edge Private Limited</fullName>
+        <default>false</default>
+        <label>BSB Edge Private Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>CAPES Consortium</fullName>
+        <default>false</default>
+        <label>CAPES Consortium</label>
+    </customValue>
+    <customValue>
+        <fullName>CNIS</fullName>
+        <default>false</default>
+        <label>CNIS</label>
+    </customValue>
+    <customValue>
+        <fullName>Hinton Info China</fullName>
+        <default>false</default>
+        <label>Hinton Info China</label>
+    </customValue>
+    <customValue>
+        <fullName>Hinton Taiwan</fullName>
+        <default>false</default>
+        <label>Hinton Taiwan</label>
+    </customValue>
+    <customValue>
+        <fullName>iGroup Philippines</fullName>
+        <default>false</default>
+        <label>iGroup Philippines</label>
+    </customValue>
+    <customValue>
+        <fullName>iGroup Thailand</fullName>
+        <default>false</default>
+        <label>iGroup Thailand</label>
+    </customValue>
+    <customValue>
+        <fullName>Japanese Standards</fullName>
+        <default>false</default>
+        <label>Japanese Standards</label>
+    </customValue>
+    <customValue>
+        <fullName>Kamal Books</fullName>
+        <default>false</default>
+        <label>Kamal Books</label>
+    </customValue>
+    <customValue>
+        <fullName>MOU Organizational Accounts</fullName>
+        <default>false</default>
+        <label>MOU Organizational Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Normdocs</fullName>
+        <default>false</default>
+        <label>Normdocs</label>
+    </customValue>
+    <customValue>
+        <fullName>SIS COA Accounts</fullName>
+        <default>false</default>
+        <label>SIS COA Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>TechDoc Brazil</fullName>
+        <default>false</default>
+        <label>TechDoc Brazil</label>
+    </customValue>
+    <customValue>
+        <fullName>Test Monitoring Center</fullName>
+        <default>false</default>
+        <label>Test Monitoring Center</label>
+    </customValue>
+    <customValue>
+        <fullName>IHS MARKIT</fullName>
+        <default>false</default>
+        <label>IHS MARKIT</label>
+    </customValue>
+    <customValue>
+        <fullName>IHS Master Account</fullName>
+        <default>false</default>
+        <label>IHS Master Account</label>
+    </customValue>
+    <customValue>
+        <fullName>ITMS</fullName>
+        <default>false</default>
+        <label>ITMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Japanese Standards Association</fullName>
+        <default>false</default>
+        <label>Japanese Standards Association</label>
+    </customValue>
+    <customValue>
+        <fullName>Kamal Books International</fullName>
+        <default>false</default>
+        <label>Kamal Books International</label>
+    </customValue>
+    <customValue>
+        <fullName>KSA- Korea Standards Association</fullName>
+        <default>false</default>
+        <label>KSA- Korea Standards Association</label>
+    </customValue>
+    <customValue>
+        <fullName>Shanghai Inst Standards</fullName>
+        <default>false</default>
+        <label>Shanghai Inst Standards</label>
+    </customValue>
+    <customValue>
+        <fullName>BookNet</fullName>
+        <default>false</default>
+        <label>BookNet</label>
+    </customValue>
+    <masterLabel>Special Accounts Skill Name</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

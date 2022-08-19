@@ -1,0 +1,27 @@
+<apex:page standardController="Royalty_Request__c" extensions="CommunitiesController" id="CommunityRequestPage" showHeader="true" sidebar="false" standardStylesheets="false" >
+	<apex:form id="theform">
+		<apex:pageBlock title="View Request: {!requesttoclone.Name}" id="updaterequest">
+		    <apex:pageBlockButtons >
+		        <apex:commandButton action="{!saveClonedRequest}" value="Save"/>
+		    </apex:pageBlockButtons>
+            <apex:pageblockSection >
+            <apex:outputField value="{!requesttoclone.Community_Account__c}"/>
+            <apex:inputField value="{!requesttoclone.Account_Street__c}"/>
+            <apex:inputField value="{!requesttoclone.Number_of_Locations__c}"/>
+            <apex:outputField value="{!requesttoclone.Account_City__c}"/>
+            <apex:inputField value="{!requesttoclone.Existing_Revenue__c}"/>
+            <apex:outputField value="{!requesttoclone.Account_State__c}"/>
+            <apex:inputField value="{!requesttoclone.Delivery_Mechanism__c}"/>
+            <apex:outputField value="{!requesttoclone.Account_Postal_Code__c}"/>
+            <apex:inputField value="{!requesttoclone.Estimated_Number_of_Users__c}"/>
+            <apex:outputField value="{!requesttoclone.Account_Country__c}"/>
+            <apex:inputField value="{!requesttoclone.Product_Mix__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:inputField value="{!requesttoclone.Response_Due_Date__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1">
+            <apex:inputField value="{!requesttoclone.Misc_Comments__c}" style="width:500px"/>
+            </apex:pageblockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

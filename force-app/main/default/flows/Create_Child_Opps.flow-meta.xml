@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>CreateCloneNeCreateCloneNewYearChildrenwYearChildren</name>
+        <label>CreateCloneNewYearChildren</label>
+        <locationX>347</locationX>
+        <locationY>50</locationY>
+        <actionName>CloneChildOppsController</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Create_Renewal_Opps</targetReference>
+        </connector>
+        <inputParameters>
+            <name>acctId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <interviewLabel>Create Child Opps {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Child Opps</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Create_Renewal_Opps</name>
+        <label>Create Renewal Opps</label>
+        <locationX>519</locationX>
+        <locationY>47</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Running_Batch_Process</name>
+            <fieldText>&lt;p&gt;Running Batch process to create renewal opps.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>CreateCloneNeCreateCloneNewYearChildrenwYearChildren</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Committee__c</fullName>
+    <externalId>false</externalId>
+    <label>Project Committee</label>
+    <referenceTo>Project_Committee__c</referenceTo>
+    <relationshipLabel>Project Committee Technical List</relationshipLabel>
+    <relationshipName>Technical_Committees</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,6 @@
+<apex:page standardController="Account" recordsetvar="a" 
+        showHeader="true" sidebar="false" showChat="false"
+        title="{!Account.Name}"
+        readonly="true" docType="html-5.0">
+    <skuid:page actiontype="New" objecttype="Account"/>
+</apex:page>

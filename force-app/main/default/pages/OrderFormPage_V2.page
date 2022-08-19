@@ -1,0 +1,394 @@
+<apex:page Controller="OrderFormController_V2" contentType="application/vnd.ms-excel#excel_test.xls">
+
+<apex:pageBlock >
+    	<table>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px;padding-top:5px; "><b>Opportunity Name: {!Opportunity.Name}</b></td>
+    		</tr>
+    	</table>
+    	
+	</apex:pageBlock>
+	<apex:pageBlock >
+		<table border="1">
+			<tr>
+				<td><b>Account Manager</b></td><td align="right">{!Opportunity.Owner.Name}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Account Name</b></td><td align="right">{!Opportunity.Account.Name}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Account #</b></td><td align="right">{!Opportunity.Account.Oracle_Account_Number__c}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Street</b></td><td align="right">{!Opportunity.Account.BillingStreet}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to City</b></td><td align="right">{!Opportunity.Account.BillingCity}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to State</b></td><td align="right">{!Opportunity.Account.BillingStateCode}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Postal Code</b></td><td align="right">{!Opportunity.Account.BillingPostalCode}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Country</b></td><td align="right">{!Opportunity.Account.BillingCountryCode}</td>
+			</tr>
+			<tr>
+            	<td></td>
+            </tr>
+            <tr>
+				<td><b>Ship to Street</b></td><td align="right">{!Opportunity.Account.ShippingStreet}</td>
+			</tr>
+			<tr>
+				<td><b>Ship to City</b></td><td align="right">{!Opportunity.Account.ShippingCity}</td>
+			</tr>
+			<tr>
+				<td><b>Ship to State</b></td><td align="right">{!Opportunity.Account.ShippingStateCode}</td>
+			</tr>
+			<tr>
+				<td><b>Ship to Postal Code</b></td><td align="right">{!Opportunity.Account.ShippingPostalCode}</td>
+			</tr>
+			<tr>
+				<td><b>Ship to Country</b></td><td align="right">{!Opportunity.Account.ShippingCountryCode}</td>
+			</tr>
+			<tr>
+    			<td><b>Invoice Contact First and Last</b></td><td align="right">{!InvoiceContact.Contact.FirstName} {!InvoiceContact.Contact.LastName}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Invoice Contact Phone</b></td><td align="right">{!InvoiceContact.Contact.Phone}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Invoice Contact Email</b></td><td align="right">{!InvoiceContact.Contact.Email}</td>
+   			</tr>
+            <tr>
+                <td><b>Subscription Type</b></td><td align="right">{!Opportunity.Type}</td>
+			</tr>
+			<tr>
+				<td><b>Payment Type</b></td><td align="right">{!Opportunity.Payment_Type__c}</td>
+			</tr>
+			<tr>
+				<td><b>Purchase Order Number</b></td><td align="right">{!Opportunity.Purchase_Order_Number__c}</td>
+			</tr>
+			<tr>
+				<td><b>Access Type</b></td><td align="right">{!Opportunity.Subscription_Code_Type__c}</td>
+			</tr>
+			<tr>
+				<td><b>IP Addresses Included</b></td><td align="right">{!Opportunity.Are_IP_Addresses_Included__c}</td>
+			</tr>
+            <tr>
+				<td><b>Demo Account</b></td><td align="right">{!Opportunity.Demo__c}</td>
+			</tr>
+			<tr>
+				<td><b>Managed Or Non-managed</b></td><td align="right">{!Opportunity.Managed_vs_Non_Managed_Picklist__c}</td>
+			</tr>
+			<tr>
+				<td><b>AR Invoice Type</b></td><td align="right">BOM</td>
+			</tr>
+			<tr>
+				<td><b>Description</b></td><td align="right">{!Opportunity.Description}</td>
+			</tr>
+			
+            <tr>
+				<td><b>Contract Start Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Opportunity.CloseDate}" /></apex:outputText></td>
+			</tr>
+			<tr>
+				<td><b>Contract End Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Opportunity.CloseDate+365}" /></apex:outputText></td>
+			</tr>
+		</table>
+ 
+	</apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+            <tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Subscription Database Info</b></td>
+   			</tr>
+    		<tr>
+				<td><b>Customer Account Info</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Account Type</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Account</b></td><td align="right">{!Opportunity.Pricebook2.Name}</td>
+			</tr>
+			<tr>
+				<td><b>User Registration Required</b></td><td align="right">{!Opportunity.Required_Log_In__c}</td>
+			</tr>
+			<tr>
+				<td><b>Industry Tag</b></td><td align="right">{!Opportunity.Industry_Tag__c}</td>
+			</tr>
+            <tr>
+				<td><b>Registration Form</b></td><td align="right">{!Opportunity.Registration_Form__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Customer Account Administrator</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Usage Admin Name</b></td><td align="right">{!Opportunity.Usage_Admin_Name__c}</td>
+			</tr>
+			<tr>
+				<td><b>Usage Admin Email</b></td><td align="right">{!Opportunity.Usage_Admin_Email__c}</td>
+			</tr>
+			<tr>
+				<td><b>Usage viewed by</b></td><td align="right">{!Opportunity.Usage_Viewed_By__c}</td>
+			</tr>
+			<tr>
+				<td><b>Field Suppression</b></td><td align="right">{!Opportunity.Field_Suppression__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<!--<tr>-->
+				<!--<td><b>Notifications</b></td><td align="right"></td>-->
+			<!--</tr>-->
+			<!--<tr>-->
+				<!--<td><b>Notify for Renewal</b></td><td align="right">{!Opportunity.Notify_for_Renewal__c}</td>-->
+			<!--</tr>-->
+            <!--<tr><td> </td></tr>-->
+			<tr>
+				<td><b>Security</b></td><td align="right"></td>
+			</tr>
+            <tr>
+				<td><b>Watermark</b></td><td align="right">{!Opportunity.Watermark__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Included Content</b></td><td align="right"></td>
+			</tr>
+            <tr>
+				<td><b>Member Dashboard</b></td><td align="right">{!Opportunity.Member_Dashboard_Domain__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+            <tr><td> </td></tr>
+    		<tr>
+				<td><b>Access Control</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Applet</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Intranet URLS</b></td><td align="right">{!Opportunity.Applet_URL__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>IP</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>IP Addresses</b></td><td align="right">{!Opportunity.IP_Addresses__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+    		<tr>
+				<td><b>Library Builder</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Admin Control</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Library Builder Admin Name</b></td><td align="right">{!Opportunity.Library_Builder_Admin__c}</td>
+			</tr>
+			<tr>
+				<td><b>Library Builder Admin Email</b></td><td align="right">{!Opportunity.Library_Builder_Admin_Email__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+            <tr><td> </td></tr>
+    		<tr>
+				<td><b>Spec Builder</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Admin Control</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Specbuilder Admin</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Spec Builder Admin Name</b></td><td align="right">{!Opportunity.Spec_Builder_Admin_Name__c}</td>
+			</tr>
+			<tr>
+				<td><b>Spec Builder Admin Email</b></td><td align="right">{!Opportunity.Spec_Builder_Admin_Email__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Group Admin</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Compass Members</b></td><td align="right">{!Opportunity.Group_Admins__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Email Control</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Mailbox Name</b></td><td align="right">{!Opportunity.Customized_Return_Email_Address__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Digital Rights Management</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>DRM Account</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Saved Settings</b></td><td align="right">{!Opportunity.DRM__c}</td>
+			</tr>
+			<tr>
+				<td><b>Custom Settings</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>Identity &amp; Access Management</b></td><td align="right"></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>IdP Entity ID</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>IdP Entity ID</b></td><td align="right">{!Opportunity.Shibboleth_Open_Athens_URL__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>LMS Demo</b></td><td align="right">{!Opportunity.LMS_Demo__c}</td>
+			</tr>
+			<tr>
+				<td><b>LMS Start Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Opportunity.LMS_Start_Date__c}" /></apex:outputText></td> 
+			</tr>
+			<tr>
+				<td><b>LMS End Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Opportunity.LMS_End_Date__c}" /></apex:outputText></td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>AICC or LMS</b></td><td align="right">{!Opportunity.LMS_Demo__c}</td>
+			</tr>
+			<tr>
+				<td><b>Estimated # of users</b></td><td align="right">{!Opportunity.Estimated_of_LMS_Users__c}</td>
+			</tr>
+			<tr>
+				<td><b>Estimated # of locations</b></td><td align="right">{!Opportunity.Number_of_LMS_Locations__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+			<tr>
+				<td><b>LMS Admin Name</b></td><td align="right">{!Opportunity.LMS_Admin_Name__r.Name}</td>
+			</tr>
+			<tr>
+				<td><b>LMS Admin Email</b></td><td align="right">{!Opportunity.LMS_Admin_Email__c}</td>
+			</tr>
+            <tr><td> </td></tr>
+    		<tr>
+    			<td align="center" ><b>Stock Number</b></td>
+    			<td align="center" ><b>Price</b></td>
+    		</tr>
+     		<apex:repeat var="p" value="{!Prods}">
+            <tr>
+                <td >{!p.Product2.ProductCode}</td>
+                <td ><apex:outputText value="{0, number, currency}">
+<apex:param value="{!p.TotalPrice}" />
+</apex:outputText></td>
+            </tr>
+            </apex:repeat>
+            <apex:outputText escape="false" rendered="{!prodcount < 2}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 3}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 4}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 5}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 6}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 7}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 8}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 9}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 10}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 11}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 12}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 13}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 14}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+           </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 15}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 16}">
+            <tr>
+                <td ></td>
+                <td >$</td>
+            </tr>
+            </apex:outputText>
+            <tr>             
+							<td align="right"><b>GRAND TOTAL:</b></td>
+							<td align="right"><b>${!Opportunity.Amount}</b></td>
+<!--                <td align="right" ><apex:OutputText escape="false" value="=DOLLAR(SUM(B102:(INDIRECT(&quot;B&quot; & ROW() - 1))), 2)" /></td>-->
+            </tr>
+    	</table>
+    </apex:pageBlock>
+
+    
+
+</apex:page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IP_Address_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Access Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Username/Password</fullName>
+                <default>false</default>
+                <label>Username/Password</label>
+            </value>
+            <value>
+                <fullName>Applet</fullName>
+                <default>false</default>
+                <label>Applet</label>
+            </value>
+            <value>
+                <fullName>IP</fullName>
+                <default>false</default>
+                <label>IP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

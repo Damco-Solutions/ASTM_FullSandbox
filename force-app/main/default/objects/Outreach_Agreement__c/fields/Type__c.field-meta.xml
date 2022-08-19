@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Copyright Agreement</fullName>
+                <default>false</default>
+                <label>Copyright Agreement</label>
+            </value>
+            <value>
+                <fullName>Liaison Agreement</fullName>
+                <default>false</default>
+                <label>Liaison Agreement</label>
+            </value>
+            <value>
+                <fullName>License</fullName>
+                <default>false</default>
+                <label>License</label>
+            </value>
+            <value>
+                <fullName>MOC – Global</fullName>
+                <default>false</default>
+                <label>MOC – Global</label>
+            </value>
+            <value>
+                <fullName>MOU-Global</fullName>
+                <default>false</default>
+                <label>MOU-Global</label>
+            </value>
+            <value>
+                <fullName>MOU – Other</fullName>
+                <default>false</default>
+                <label>MOU – Other</label>
+            </value>
+            <value>
+                <fullName>No-Bid Contract</fullName>
+                <default>false</default>
+                <label>No-Bid Contract</label>
+            </value>
+            <value>
+                <fullName>Pilot Project</fullName>
+                <default>false</default>
+                <label>Pilot Project</label>
+            </value>
+            <value>
+                <fullName>PSDO</fullName>
+                <default>false</default>
+                <label>PSDO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

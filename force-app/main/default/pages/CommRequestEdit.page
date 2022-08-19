@@ -1,0 +1,29 @@
+<apex:page standardController="Royalty_Request__c" extensions="CommunitiesController" id="CommunityRequestPage" showHeader="true" sidebar="false" standardStylesheets="false" >
+	<apex:form id="theform">
+		<apex:pageBlock title="View Request: {!requestupdate.Name}" id="updaterequest">
+		    <apex:pageBlockButtons >
+		        <apex:commandButton action="{!saveEditedRequest}" value="Save"/>
+		    </apex:pageBlockButtons>
+            <apex:pageblockSection >
+            <apex:outputField value="{!requestupdate.Community_Account__c}"/>
+            <apex:inputField value="{!requestupdate.Account_Street__c}"/>
+            <apex:inputField value="{!requestupdate.Number_of_Locations__c}"/>
+            <apex:inputField value="{!requestupdate.Account_City__c}"/>
+            <apex:inputField value="{!requestupdate.Existing_Revenue__c}"/>
+            <apex:inputField value="{!requestupdate.Account_State__c}"/>
+            <apex:inputField value="{!requestupdate.Delivery_Mechanism__c}"/>
+            <apex:inputField value="{!requestupdate.Account_Postal_Code__c}"/>
+            <apex:inputField value="{!requestupdate.Estimated_Number_of_Users__c}"/>
+            <apex:inputField value="{!requestupdate.Account_Country__c}"/>
+            <apex:inputField value="{!requestupdate.Industry_Tag__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:inputField value="{!requestupdate.Product_Mix__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:inputField value="{!requestupdate.Response_Due_Date__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1">
+            <apex:inputField value="{!requestupdate.Misc_Comments__c}" style="width:500px"/>
+            </apex:pageblockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

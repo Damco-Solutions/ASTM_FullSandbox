@@ -1,0 +1,35 @@
+<apex:page standardController="Royalty_Request__c" extensions="CommunitiesController" id="CommunityRequestPage" showHeader="true" sidebar="false" standardStylesheets="false" >
+	<apex:form id="theform">
+		<apex:pageBlock title="View Request: {!requestupdate.Name}" id="updaterequest">
+		    <apex:pageBlockButtons >
+		        <apex:commandButton action="{!backtoLandingPage}" value="Back"/>
+		    </apex:pageBlockButtons>
+            <apex:pageblockSection >
+            <apex:outputField value="{!requestupdate.Community_Account__c}"/>
+            <apex:outputField value="{!requestupdate.Account_Street__c}"/>
+            <apex:outputField value="{!requestupdate.Number_of_Locations__c}"/>
+            <apex:outputField value="{!requestupdate.Account_City__c}"/>
+            <apex:outputField value="{!requestupdate.Existing_Revenue__c}"/>
+            <apex:outputField value="{!requestupdate.Account_State__c}"/>
+            <apex:outputField value="{!requestupdate.Delivery_Mechanism__c}"/>
+            <apex:outputField value="{!requestupdate.Account_Postal_Code__c}"/>
+            <apex:outputField value="{!requestupdate.Estimated_Number_of_Users__c}"/>
+            <apex:outputField value="{!requestupdate.Account_Country__c}"/>
+            <apex:outputField value="{!requestupdate.Industry_Tag__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:outputField value="{!requestupdate.Product_Mix__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:outputField value="{!requestupdate.Response_Due_Date__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:outputField value="{!requestupdate.Royalty_Expiration_Date__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1">
+            <apex:outputField value="{!requestupdate.Misc_Comments__c}" style="width:500px"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1">
+            <apex:outputField value="{!requestupdate.Comments__c}" style="width:500px"/>
+            </apex:pageblockSection>
+            
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

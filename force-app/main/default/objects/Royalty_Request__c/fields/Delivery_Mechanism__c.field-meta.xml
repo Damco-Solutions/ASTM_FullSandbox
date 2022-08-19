@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Mechanism__c</fullName>
+    <externalId>false</externalId>
+    <label>Delivery Mechanism</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ASTM Compass</fullName>
+                <default>false</default>
+                <label>ASTM Compass</label>
+            </value>
+            <value>
+                <fullName>Own Platform</fullName>
+                <default>false</default>
+                <label>Own Platform</label>
+            </value>
+            <value>
+                <fullName>Books</fullName>
+                <default>false</default>
+                <label>Books</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

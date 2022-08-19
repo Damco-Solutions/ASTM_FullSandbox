@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Additional access for Case, to change case status from Closed to any other value overriding the validation Rule</description>
+    <label>Special access for case status change</label>
+</CustomPermission>

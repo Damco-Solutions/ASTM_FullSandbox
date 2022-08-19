@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queue_Assignment__c</fullName>
+    <externalId>false</externalId>
+    <label>Queue Assignment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>PTP</fullName>
+                <default>false</default>
+                <label>PTP</label>
+            </value>
+            <value>
+                <fullName>AWWA</fullName>
+                <default>false</default>
+                <label>AWWA</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>CGA</fullName>
+                <default>false</default>
+                <label>CGA</label>
+            </value>
+            <value>
+                <fullName>AENOR</fullName>
+                <default>false</default>
+                <label>AENOR</label>
+            </value>
+            <value>
+                <fullName>ISS Mgt</fullName>
+                <default>false</default>
+                <label>ISS Mgt</label>
+            </value>
+            <value>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+                <label>Level 2</label>
+            </value>
+            <value>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+                <label>Accounting</label>
+            </value>
+            <value>
+                <fullName>TCO</fullName>
+                <default>false</default>
+                <label>TCO</label>
+            </value>
+            <value>
+                <fullName>CCRL</fullName>
+                <default>false</default>
+                <label>CCRL</label>
+            </value>
+            <value>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+                <label>Spanish</label>
+            </value>
+            <value>
+                <fullName>ISS Internal</fullName>
+                <default>false</default>
+                <label>ISS Internal</label>
+            </value>
+            <value>
+                <fullName>IES</fullName>
+                <default>false</default>
+                <label>IES</label>
+            </value>
+            <value>
+                <fullName>Test Queue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Test Queue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,300 @@
+<apex:page standardController="Royalty_Request__c" contentType="application/vnd.ms-excel#RR_Form_test.xls" >
+
+<apex:pageBlock >
+    	<table>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px;padding-top:5px; "><b>Reseller Order: {!Royalty_Request__c.Name}</b></td>
+    		</tr>
+    	</table>
+    	
+	</apex:pageBlock>
+	<apex:pageBlock >
+		<table border="1">
+			<tr>
+				<td><b>Bill to Account Name</b></td><td align="right">{!Royalty_Request__c.Account__r.Name}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Account #</b></td><td align="right">{!Royalty_Request__c.Account__r.Oracle_Account_Number__c}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Street</b></td><td align="right">{!Royalty_Request__c.Account__r.BillingStreet}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to City</b></td><td align="right">{!Royalty_Request__c.Account__r.BillingCity}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to State</b></td><td align="right">{!Royalty_Request__c.Account__r.BillingStateCode}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Postal Code</b></td><td align="right">{!Royalty_Request__c.Account__r.BillingPostalCode}</td>
+			</tr>
+			<tr>
+				<td><b>Bill to Country</b></td><td align="right">{!Royalty_Request__c.Account__r.BillingCountryCode}</td>
+			</tr>
+			<tr>
+				<td><b>IP Address Type</b></td><td align="right">{!Royalty_Request__c.IP_Address_Type__c}</td>
+			</tr>
+			<tr>
+				<td><b>URL</b></td><td align="right">{!Royalty_Request__c.URL__c}</td>
+			</tr>
+			<tr>
+				<td><b>IP Addresses</b></td><td align="right">{!Royalty_Request__c.IP_Addresses__c}</td>
+			</tr>
+			<tr>
+				<td><b>AR Invoice Type</b></td><td align="right">BOM</td>
+			</tr>
+			<tr>
+				<td><b>DRM On or Off</b></td><td align="right">{!Royalty_Request__c.DRM_On_or_Off__c}</td>
+			</tr>
+			<tr>
+				<td><b>Forced Login</b></td><td align="right">{!Royalty_Request__c.Forced_Login__c}</td>
+			</tr>
+			<tr>
+				<td><b>Watermark</b></td><td align="right">{!Royalty_Request__c.Watermark__c}</td>
+			</tr>
+			<tr>
+				<td><b>Usage Reports Hidden</b></td><td align="right">{!Royalty_Request__c.Usage_Reports_Hidden__c}</td>
+			</tr>
+			<tr>
+				<td><b>Counter Subscription</b></td><td align="right">{!Royalty_Request__c.Counter_Subscription__c}</td>
+			</tr>
+			<tr>
+				<td><b>Order Amount</b></td><td align="right"><apex:outputText value="{0, number, currency}"><apex:param value="{!Royalty_Request__c.Royalty_Amount__c}" /></apex:outputText></td>
+			</tr>
+			<tr>
+				<td><b>Managed</b></td><td align="right">Yes</td>
+			</tr>
+			<tr>
+				<td><b>Purchase Order #</b></td><td align="right"></td>
+			</tr>
+			<tr>
+				<td><b>Demo Account</b></td><td align="right">No</td>
+			</tr>
+			<tr>
+				<td><b>Sales Tax Calculated</b></td><td align="right">No</td>
+			</tr>
+			<tr>
+				<td><b>Product Mix</b></td><td align="right">{!Royalty_Request__c.Product_Mix__c}</td>
+			</tr>
+			<tr>
+				<td valign="top"><b>Misc Comments</b></td><td align="right">{!Royalty_Request__c.Misc_Comments__c}</td>
+			</tr>
+			<tr>
+				<td><b>Contract Start Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Royalty_Request__c.Contract_Start_Date__c}" /></apex:outputText></td>
+			</tr>
+			<tr>
+				<td><b>Contract End Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Royalty_Request__c.Contract_End_Date__c}" /></apex:outputText></td>
+			</tr>
+			<tr>
+                <td><b>New/Renewal/Quote</b></td><td align="right">{!Royalty_Request__c.Sale_Type__c}</td>
+			</tr>
+		</table>
+ 
+	</apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Account Details from Community</b></td>
+   			</tr>
+    		<tr>
+    			<td><b>Ship to Account Name</b></td><td align="center">{!Royalty_Request__c.Community_Account__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Ship to Account Street</b></td><td align="center">{!Royalty_Request__c.Account_Street__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Ship to Account City</b></td><td align="center">{!Royalty_Request__c.Account_City__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Ship to Account State</b></td><td align="center">{!Royalty_Request__c.Account_State__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Ship to Account Postal Code</b></td><td align="center">{!Royalty_Request__c.Account_Postal_Code__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Ship to Account Country</b></td><td align="center">{!Royalty_Request__c.Account_Country__c}</td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Customer Account Info</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Account Type</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Account</b></td><td align="center">Compass</td>
+   			</tr>
+   			<tr>
+    			<td><b>User Registration Required</b></td><td align="center">{!Royalty_Request__c.Forced_Login__c}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Industry Tag</b></td><td align="center">{!Royalty_Request__c.Industry_Tag__c}</td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"><b>Customer Account Administrator</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Usage Admin Name</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td><b>Usage Admin Email</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td><b>Usage viewed by</b></td><td align="center">All Users</td>
+   			</tr>
+   			<tr>
+    			<td><b>Field Suppression</b></td><td align="center">None</td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+   			<!--<tr>-->
+    			<!--<td colspan="2"><b>Notifications</b></td>-->
+   			<!--</tr>-->
+   			<!--<tr>-->
+    			<!--<td><b>Notification for Renewal</b></td><td align="center">Yes</td>-->
+   			<!--</tr>-->
+   			<!--<tr>-->
+    			<!--<td colspan="2"> </td>-->
+   			<!--</tr>-->
+   			<tr>
+    			<td colspan="2"><b>Security</b></td>
+   			</tr>
+   			<tr>
+                <td><b>Watermark with Username</b></td><td align="center"><apex:outputText rendered="{!Royalty_Request__c.Watermark__c == 'Yes'}" value="Yes"/><apex:outputText rendered="{!Royalty_Request__c.Watermark__c != 'Yes'}" value="No"/></td>
+   			</tr>
+   			<tr>
+    			<td><b>Watermark with Secret Watermark</b></td><td align="center"><apex:outputText rendered="{!Royalty_Request__c.Watermark__c == 'Yes'}" value="Yes"/><apex:outputText rendered="{!Royalty_Request__c.Watermark__c != 'Yes'}" value="No"/></td>
+   			</tr>
+   			<tr>
+    			<td><b>No Watermark</b></td><td align="center"><apex:outputText rendered="{!Royalty_Request__c.Watermark__c == 'No'}" value="Yes"/><apex:outputText rendered="{!Royalty_Request__c.Watermark__c != 'No'}" value="No"/></td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"><b>Included Content</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Member Dashboard</b></td><td align="center"></td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Access Control</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Applet</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Intranet URLS</b></td><td align="center">{!Royalty_Request__c.URL__c}</td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>IP</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>IP Addresses</b></td><td align="center">{!Royalty_Request__c.IP_Addresses__c}</td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Library Builder</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Admin Control</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Library Builder Admin Name</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td><b>Library Builder Admin Email</b></td><td align="center"></td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>   
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Spec Builder</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Admin Control</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Spec Builder Admin Name</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td><b>Spec Builder Admin Email</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Group Admin</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Compass Members</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td><b>Email</b></td><td align="center"></td>
+   			</tr>
+   			<tr>
+    			<td colspan="2"> </td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>Email Control</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Mailbox Name</b></td><td align="center"></td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Digital Rights Management</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>DRM Account</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>Saved Settings</b></td><td align="center"><apex:outputText rendered="{!Royalty_Request__c.DRM_On_or_Off__c == 'On'}" value="View PDF/HTML"/><apex:outputText rendered="{!Royalty_Request__c.DRM_On_or_Off__c != 'On'}" value="No"/></td>
+   			</tr>
+   			<tr>
+    			<td><b>Custom Settings</b></td><td align="center"></td>
+   			</tr>
+    	</table>
+    </apex:pageBlock>     
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td> </td></tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Identity &amp; Access Management</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2"><b>IdP Entity ID</b></td>
+   			</tr>
+   			<tr>
+    			<td><b>IdP Entity ID</b></td><td align="center"></td>
+   			</tr>
+    	</table>
+    </apex:pageBlock> 
+</apex:page>

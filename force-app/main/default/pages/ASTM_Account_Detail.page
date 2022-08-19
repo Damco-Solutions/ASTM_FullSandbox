@@ -1,0 +1,4 @@
+<apex:page standardController="Account"
+  extensions="skuid.Redirects"
+  action="{!redirect}?objectType=Account&actionType=View">
+</apex:page>

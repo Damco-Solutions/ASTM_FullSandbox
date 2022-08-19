@@ -1,0 +1,4 @@
+<apex:page standardController="Contract"
+  extensions="skuid.Redirects"
+  action="{!redirect}?objectType=Contract&actionType=View">
+</apex:page>

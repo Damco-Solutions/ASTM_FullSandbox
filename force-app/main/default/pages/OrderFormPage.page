@@ -1,0 +1,132 @@
+<apex:page Controller="OrderFormController" contentType="application/vnd.ms-excel#excel_test.xls">
+
+    <apex:pageBlock >
+    	<table>
+    		<tr>
+    			<td colspan="2" bgcolor="#CCCCCC" style="font-size:22px;padding-top:5px; "><b>ASTM REP: {!Opportunity.Owner.Name}</b></td>
+    		</tr>
+    	</table>
+    	
+	</apex:pageBlock>
+	<apex:pageBlock >
+		<table border="1">
+			<tr>
+				<td><b>New order, Renewal, or Quotation</b></td><td align="right">{!Opportunity.Type}</td>
+			</tr>
+			<tr>
+				<td><b>Account Name</b></td><td align="right">{!Opportunity.Account.Name}</td>
+			</tr>
+			<tr>
+				<td><b>Account Number (From User Admin)</b></td><td align="right">{!Opportunity.Account.Oracle_Account_Number__c}</td>
+			</tr>
+			<tr>
+				<td><b>Access Start Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Contract.StartDate}" /></apex:outputText></td>
+			</tr>
+			<tr>
+				<td><b>Access End Date</b></td><td align="right"><apex:outputText value="{0,date,MMMM dd yyyy}"><apex:param value="{!Contract.EndDate}" /></apex:outputText></td>
+			</tr>
+			<tr>
+				<td><b>Purchase Order Number</b></td><td align="right">{!Opportunity.Purchase_Order_Number__c}</td>
+			</tr>
+			<tr>
+				<td><b>Managed Or Non-managed</b></td><td align="right">{!Opportunity.Managed_vs_Non_Managed_Picklist__c}</td>
+			</tr>
+			<tr>
+				<td><b>Applet or IP Authentication</b></td><td align="right">{!Opportunity.Subscription_Code_Type__c}</td>
+			</tr>
+			<tr>
+				<td><b>Are IP Addresses included (Yes or No)</b></td><td align="right">{!Opportunity.Are_IP_Addresses_Included__c}</td>
+			</tr>
+			<tr>
+				<td><b>Sales Tax Calculated (Yes or No)</b></td><td align="right">{!Opportunity.Was_Sales_Tax_calculated_in_the_form__c}</td>
+			</tr>
+			<tr>
+				<td><b>DRM Type</b></td><td align="right">{!Opportunity.DRM__c}</td>
+			</tr>
+			<tr>
+				<td><b>Payment Type</b></td><td align="right">{!Opportunity.Payment_Type__c}</td>
+			</tr>
+			<tr>
+				<td><b>Forced Log In (Yes or No)</b></td><td align="right">{!Opportunity.Required_Log_In__c}</td>
+			</tr>
+			<tr>
+				<td><b>Watermark</b></td><td align="right">{!Opportunity.Watermark__c}</td>
+			</tr>
+			<tr>
+				<td><b>Usage Reports Hidden (Yes or No)</b></td><td align="right">{!Opportunity.Hide_Usage_Reports__c}</td>
+			</tr>
+			<tr>
+				<td><b>Counter Subscription (Yes or No)</b></td><td align="right">{!Opportunity.Counter_Subscription__c}</td>
+			</tr>
+		</table>
+ 
+	</apex:pageBlock>
+    <apex:pageBlock > 
+    	<table border="1">
+    		<tr><td></td><td>______________________</td><td></td><td>______________________</td></tr>
+    		<tr>
+    			<td colspan="4" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Customer Information</b></td>
+   			</tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#92D050" align="center"><b><i>BILLING</i></b></td><td colspan="2" bgcolor="#92D050" align="center"><b><i>SHIPPING (if different)</i></b></td>
+   			</tr>
+    		<tr>
+    			<td><b>Contact Name</b></td><td align="center">{!InvoiceContact.Contact.FirstName} {!InvoiceContact.Contact.LastName}</td><td><b>Contact Name</b></td><td align="center">{!InvoiceContact.Contact.FirstName} {!InvoiceContact.Contact.LastName}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Contact Phone</b></td><td align="center">{!InvoiceContact.Contact.Phone}</td><td><b>Contact Phone</b></td><td align="center">{!InvoiceContact.Contact.Phone}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Contact Email</b></td><td align="center">{!InvoiceContact.Contact.Email}</td><td><b>Contact Email</b></td><td align="center">{!InvoiceContact.Contact.Email}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Billing Street</b></td><td align="center">{!Opportunity.Account.BillingStreet}</td><td><b>Shipping Street</b></td><td align="center">{!Opportunity.Account.ShippingStreet}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Billing City</b></td><td align="center">{!Opportunity.Account.BillingCity}</td><td><b>Shipping City</b></td><td align="center">{!Opportunity.Account.ShippingCity}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Billing State</b></td><td align="center">{!Opportunity.Account.BillingStateCode}</td><td><b>Shipping State</b></td><td align="center">{!Opportunity.Account.ShippingStateCode}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Billing Postal Code</b></td><td align="center">{!Opportunity.Account.BillingPostalCode}</td><td><b>Shipping Postal Code</b></td><td align="center">{!Opportunity.Account.ShippingPostalCode}</td>
+   			</tr>
+   			<tr>
+    			<td><b>Billing Country</b></td><td align="center">{!Opportunity.Account.BillingCountryCode}</td><td><b>Shipping Country</b></td><td align="center">{!Opportunity.Account.ShippingCountryCode}</td>
+   			</tr>
+    	</table>
+    </apex:pageBlock> 
+	<apex:pageBlock >
+		<table border="1">
+			<tr><td> </td></tr>
+			<tr>
+    			<td colspan="4" bgcolor="#CCCCCC" style="font-size:22px " align="left"><b>Product Information</b></td>
+   			</tr>
+            <tr>
+                <td bgcolor="#92D050" align="center"><b><i>Product Name</i></b></td><td bgcolor="#92D050" align="center"><b><i>Description</i></b></td><td bgcolor="#92D050" align="center"><b><i>Oracle Stock Number</i></b></td><td bgcolor="#92D050" align="center"><b><i>Price</i></b></td>
+            </tr>
+            <apex:repeat var="p" value="{!Prods}">
+            <tr>
+                <td>{!p.Product2.Name}</td><td>{!p.Product2.Description}</td><td>{!p.Product2.ProductCode}</td><td>$</td>
+            </tr> <!-- <apex:outputText value="{0, number, currency}">
+<apex:param value="{!p.TotalPrice}" />
+</apex:outputText> -->
+            </apex:repeat>
+            <tr><td></td><td></td><td></td><td align="left">$</td></tr>
+            <tr><td></td><td></td><td></td><td align="left">$</td></tr>
+            <tr><td></td><td></td><td></td><td align="left">$</td></tr>
+            <tr><td></td><td></td><td></td><td align="left">$</td></tr>
+            
+            <tr><td></td><td></td><td align="right"><b>TOTAL:</b></td><td><apex:OutputText escape="false" value="=SUM(D30:(INDIRECT(&quot;D&quot; &amp; ROW() - 1)))" /></td></tr>
+        </table>
+     </apex:pageBlock>  
+   	<apex:pageBlock >
+		<table border="1">
+		<tr><td> </td></tr>
+		<tr>
+			<td colspan="4" style="color:red" height="150" valign="top">NOTES BOX:
+			</td>
+		</tr>
+	</table>
+	</apex:pageBlock>
+</apex:page>

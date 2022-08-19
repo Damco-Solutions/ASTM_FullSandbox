@@ -1,0 +1,20 @@
+<!--
+ - Created by johnpernock from OpenGate Consulting on 2019-07-02.
+ -->
+
+<aura:component description="OppCOSComponent" controller="OppCOSComponentController" implements="force:hasRecordId,lightning:actionOverride,force:lightningQuickActionWithoutHeader,force:hasSObjectName">
+    <aura:attribute name="newOppId" type="Id"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!not(empty(v.newOppId))}">
+    <lightning:recordForm
+            recordId="{!v.newOppId}"
+            objectApiName="Opportunity"
+            columns="2"
+            mode="edit"
+            layoutType="Full"
+            onsuccess="{!c.handleOnSuccess}"
+            oncancel="{!c.handleCancel}"
+    />
+    </aura:if>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Royalty_Payments</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>400</height>
+    <linkType>url</linkType>
+    <masterLabel>Create Royalty Payments</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/flow/Create_Royalty_Payments_from_Requests?retURL=/lightning/o/Royalty_Request__c/list?filterName=00B19000001x71bEAA</url>
+</WebLink>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Middleware_App_ID__c</fullName>
+    <description>URL for the order history server api - similar to https://astm.org/72b79085-c072-4221-827f-b9eb92eb9d71</description>
+    <externalId>false</externalId>
+    <inlineHelpText>URL for the order history server api - similar to https://astm.org/72b79085-c072-4221-827f-b9eb92eb9d71</inlineHelpText>
+    <label>Middleware App ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

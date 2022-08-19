@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Royalty Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Royalty Requests</value>
+    </caseValues>
+    <layouts>
+        <layout>Lightning Royalty Request Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Details from Community</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Royalty Request Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Details from Community</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Create_Royalty_Payments</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Create_Royalty_Request_Form</name>
+    </webLinks>
+</CustomObjectTranslation>

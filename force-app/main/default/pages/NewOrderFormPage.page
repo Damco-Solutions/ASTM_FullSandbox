@@ -1,0 +1,378 @@
+<apex:page Controller="OrderFormController" contentType="application/vnd.ms-excel#excel_test.xls">
+
+    <apex:pageBlock >
+    	<table>
+    		<tr>
+    			<td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td>
+    		</tr>
+    		<tr>
+    			<td colspan="7" style="font-size:28px; " align="center" bordercolor="#E5E5E5" >ASTM SALES</td>
+    			<td colspan="5" bgcolor="#E5E5E5" bordercolor="#FFFFFF" >Account#: {!Opportunity.Account.Oracle_Account_Number__c}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="7" style="font-size:44px;"  align="center" valign="top" bordercolor="#E5E5E5" ><b>ORDER FORM</b></td>
+    			<td colspan="5" bgcolor="#E5E5E5" bordercolor="#FFFFFF" >Org Name: {!Opportunity.Account.Name}<br/>Sales Mng: {!Opportunity.Owner.Name}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="12" style="height:5px;"></td>
+    		</tr>
+		</table>
+		<table border="1" bordercolor="#999999">
+    		<tr>
+    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px;border:thin;border-color:#666666 "><b>Account Information</b> </td>
+    		</tr>
+    		<tr>
+    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">New/Renewal/Quote</td>
+    			<td colspan="8">{!Opportunity.Type}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Account Name</td>
+    			<td colspan="8">{!Opportunity.Account.Name}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Contact Name</td>
+    			<td colspan="8">{!InvoiceContact.Contact.FirstName} {!InvoiceContact.Contact.LastName}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Contact Phone</td>
+    			<td colspan="8">{!InvoiceContact.Contact.Phone}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Contact Email</td>
+    			<td colspan="8">{!InvoiceContact.Contact.Email}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" bgcolor="#B8CCE4" align="left" style="font-size:22px;padding-top:5px; "><b>Address</b> </td>
+    			<td colspan="5" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; "><b>Billing</b></td>
+    			<td colspan="5" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; "><b>Shipping</b></td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Street</td>
+    			<td colspan="5">{!Opportunity.Account.BillingStreet}</td>
+    			<td colspan="5">{!Opportunity.Account.ShippingStreet}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">City</td>
+    			<td colspan="5">{!Opportunity.Account.BillingCity}</td>
+    			<td colspan="5">{!Opportunity.Account.ShippingCity}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">State</td>
+    			<td colspan="5">{!Opportunity.Account.BillingStateCode}</td>
+    			<td colspan="5">{!Opportunity.Account.ShippingStateCode}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Postal Code</td>
+    			<td colspan="5" align="left">{!Opportunity.Account.BillingPostalCode}</td>
+    			<td colspan="5" align="left">{!Opportunity.Account.ShippingPostalCode}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Country</td>
+    			<td colspan="5">{!Opportunity.Account.BillingCountryCode}</td>
+    			<td colspan="5">{!Opportunity.Account.ShippingCountryCode}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; "><b>Order Information</b> </td>
+    		</tr>
+    		<tr>
+    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">AR Invoice Type (BOM/STD)</td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.AR_Invoice_Type__c == 'BOM'}">BOM</apex:outputText></td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.AR_Invoice_Type__c == 'STD'}">STD</apex:outputText></td>
+    		</tr>
+    		<tr>
+    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Purchase Order Number</td>
+    			<td colspan="6" align="center">{!Opportunity.Purchase_Order_Number__c}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Demo?</td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.Demo__c == 'Yes'}">Yes</apex:outputText></td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.Demo__c == 'No'}">No</apex:outputText></td>
+    		</tr>
+    		<tr>
+    			<td colspan="3" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Start Date</td>
+    			<td colspan="3" align="center"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!Contract.StartDate}" /></apex:outputText></td>
+    			<td colspan="3" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">End Date</td>
+    			<td colspan="3" align="center"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!Contract.EndDate}" /></apex:outputText></td>
+    		</tr>
+    		<tr>
+    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Sales Tax Calculated (Yes or No)</td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.Was_Sales_Tax_calculated_in_the_form__c == 'Yes'}">Yes</apex:outputText></td>
+    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.Was_Sales_Tax_calculated_in_the_form__c == 'No'}">No</apex:outputText></td>
+    		</tr>
+    		<tr>
+    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; " ><b>PRICEBOOK: {!Opportunity.Pricebook2.Name}</b></td>
+    		</tr>
+    		<tr>
+    			<td colspan="3" align="center" style="font-size:20px;font:Arial, Helvetica, sans-serif;">Stock Number</td>
+    			<td colspan="7" align="center" style="font-size:20px;">Salesforce Product Name</td>
+    			<td colspan="2" align="center" style="font-size:20px;">Price</td>
+    		</tr>
+     		<apex:repeat var="p" value="{!Prods}">
+            <tr>
+                <td colspan="3">{!p.Product2.ProductCode}</td>
+                <td colspan="7">{!p.Product2.Name}</td>
+                <td colspan="2"><apex:outputText value="{0, number, currency}">
+<apex:param value="{!p.TotalPrice}" />
+</apex:outputText></td>
+            </tr>
+            </apex:repeat>
+            <apex:outputText escape="false" rendered="{!prodcount < 2}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 3}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 4}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 5}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 6}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 7}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 8}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 9}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 10}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 11}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 12}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 13}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 14}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 15}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <apex:outputText escape="false" rendered="{!prodcount < 16}">
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="7"></td>
+                <td colspan="2">$</td>
+            </tr>
+            </apex:outputText>
+            <tr>             
+                <td colspan="10" align="right"><b>TOTAL:</b></td>
+                <td colspan="2"><apex:OutputText escape="false" value="=SUM(K25:(INDIRECT(&quot;K&quot; &amp; ROW() - 1)))" /></td>
+            </tr>
+         </table>
+    	<table>
+    		<tr>
+    			<td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td><td style="width:75px;"></td>
+    		</tr>
+    		<tr>
+    			<td colspan="7" style="font-size:28px;" align="center" bordercolor="#E5E5E5" >ASTM SALES</td>
+    			<td colspan="5" bgcolor="#E5E5E5" bordercolor="#FFFFFF" >Account#: {!Opportunity.Account.Oracle_Account_Number__c}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="7" style="font-size:44px;"  align="center" valign="top" bordercolor="#E5E5E5" height="32px" ><b>ORDER FORM</b></td>
+    			<td colspan="5" bgcolor="#E5E5E5" bordercolor="#FFFFFF" >Org Name: {!Opportunity.Account.Name}<br/>Sales Mng: {!Opportunity.Owner.Name}</td>
+    		</tr>
+    		<tr>
+    			<td colspan="12" style="height:5px;"></td>
+    		</tr>
+		</table>
+
+    		<table border="1" bordercolor="#999999">
+	    		<tr>
+	    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; ">Subscription Settings</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Forced Login</td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Required_Log_In__c == 'Yes'}">Yes</apex:outputText></td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Required_Log_In__c == 'No'}">No</apex:outputText></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Hide Usage</td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Hide_Usage_Reports__c == 'Yes'}">Yes</apex:outputText></td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Hide_Usage_Reports__c == 'No'}">No</apex:outputText></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Watermark</td>
+	    			<td colspan="8" align="center">{!Opportunity.Watermark__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="4" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Managed</td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Contract_Required__c == 'Yes'}">Yes</apex:outputText></td>
+	    			<td colspan="4" align="center"><apex:outputText rendered="{!Opportunity.Contract_Required__c == 'No'}">No</apex:outputText></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="3" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Reseller/Consortium</td>
+	    			<td colspan="3" align="center">{!Opportunity.Reseller_Consortium__c}</td>
+	    			<td colspan="3">DRM Option</td>
+	    			<td colspan="3" align="center">{!Opportunity.DRM__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="12" style="font-size:20px;padding-top:5px;" valign="top">Applet URL/IP Addresses (Required):<br/><br/><br/></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="height:5px;"></td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="12" align="center" style="font-size:22px;padding-top:5px; ">Customer Account Administrator</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="font-size:16px;font:Arial, Helvetica, sans-serif;" align="center">Name</td>
+	    			<td colspan="4">{!CustomerAccountAdmin.Contact.FirstName} {!CustomerAccountAdmin.Contact.LastName}</td>
+	    			<td colspan="2" align="center">Email</td>
+	    			<td colspan="4">{!CustomerAccountAdmin.Contact.Email}</td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="12" align="center" style="font-size:22px;padding-top:5px; ">Counter</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="font-size:16px;font:Arial, Helvetica, sans-serif;" align="center">Name</td>
+	    			<td colspan="4">{!CounterContact.Contact.FirstName} {!CounterContact.Contact.LastName}</td>
+	    			<td colspan="2" align="center">Email</td>
+	    			<td colspan="4">{!CounterContact.Contact.Email}</td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="12"></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; "><b>LMS Settings</b></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">LMS Demo</td>
+	    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.LMS_Demo__c == 'Yes'}">Yes</apex:outputText></td>
+	    			<td colspan="3" align="center"><apex:outputText rendered="{!Opportunity.LMS_Demo__c == 'No'}">No</apex:outputText></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">LMS Start Date</td>
+	    			<td colspan="6" align="center"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!Opportunity.LMS_Start_Date__c}" /></apex:outputText></td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">LMS End Date</td>
+	    			<td colspan="6" align="center"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!Opportunity.LMS_End_Date__c}" /></apex:outputText></td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">AICC or LMS</td>
+	    			<td colspan="6" align="center">{!Opportunity.AICC_or_LMS__c}</td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">Estimated # of LMS Users</td>
+	    			<td colspan="6" align="center">{!Opportunity.Estimated_of_LMS_Users__c}</td>
+	    		</tr>
+	   			<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left"># of LMS Locations</td>
+	    			<td colspan="6" align="center">{!Opportunity.Number_of_LMS_Locations__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="12" align="center" style="font-size:22px;padding-top:5px; ">LMS Adminstrator</td>
+	    		</tr>
+	     		<tr>
+	    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="center">Name</td>
+	    			<td colspan="4">{!Opportunity.LMS_Admin_Name__r.Name}</td>
+	    			<td colspan="2" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="center">Email</td>
+	    			<td colspan="4">{!Opportunity.LMS_Admin_Email__c}</td>
+	    		</tr>
+	     		<tr>
+	    			<td colspan="12" bgcolor="#B8CCE4" align="center" style="font-size:22px;padding-top:5px; "><b>SpecBuilder Information</b></td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">SpecBuilder 1</td>
+	    			<td colspan="6">{!Opportunity.SpecBuilder_One__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">SpecBuilder 2</td>
+	    			<td colspan="6">{!Opportunity.SpecBuilder2__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">SpecBuilder 3</td>
+	    			<td colspan="6">{!Opportunity.SpecBuilder3__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">SpecBuilder 4</td>
+	    			<td colspan="6">{!Opportunity.SpecBuilder4__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">SpecBuilder 5</td>
+	    			<td colspan="6">{!Opportunity.SpecBuilder5__c}</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">TBD</td>
+	    			<td colspan="6">TBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="6" style="font-size:20px;font:Arial, Helvetica, sans-serif;" align="left">TBD</td>
+	    			<td colspan="6">TBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="12" style="font-size:20px;padding-top:5px;" valign="top" >NOTES: {!Opportunity.Description}<br/><br/><br/></td>
+	    		</tr>
+  
+    	</table>
+    	
+	</apex:pageBlock>
+
+</apex:page>

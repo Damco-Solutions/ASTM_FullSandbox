@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Store settings to connect to Order History API on Azure</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Order History API</label>
+    <visibility>Public</visibility>
+</CustomObject>

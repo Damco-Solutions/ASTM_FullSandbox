@@ -1,0 +1,52 @@
+<apex:page standardController="Royalty_Request__c" extensions="CommunitiesController" id="CommunityRequestPage" showHeader="true" sidebar="false" standardStylesheets="false" >
+	<apex:form id="theform" enctype="multipart/form-data">
+		<apex:pageBlock title="Update Request: {!requestupdate.Name}" id="updaterequest">
+		    <apex:pageBlockButtons >
+		        <apex:commandButton action="{!saveUpdatedRequest}" value="Save"/>
+		    </apex:pageBlockButtons>
+            <apex:pageblockSection >
+            <apex:outputField value="{!requestupdate.Community_Account__c}"/>
+            <apex:pageBlockSectionItem > </apex:pageBlockSectionItem>
+            <apex:outputField value="{!requestupdate.Account_Street__c}"/>
+            <apex:outputField value="{!requestupdate.Number_of_Locations__c}"/>
+            <apex:outputField value="{!requestupdate.Account_City__c}"/>
+            <apex:outputField value="{!requestupdate.Existing_Revenue__c}"/>
+            <apex:outputField value="{!requestupdate.Account_State__c}"/>
+            <apex:outputField value="{!requestupdate.Delivery_Mechanism__c}"/>
+            <apex:outputField value="{!requestupdate.Account_Postal_Code__c}"/>
+            <apex:outputField value="{!requestupdate.Product_Mix__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1">
+            <apex:inputField value="{!requestupdate.Opportunity_Status__c}">
+            <apex:actionSupport event="onchange" action="{!changeShowWon}" rerender="setupRequired"/>
+            </apex:inputField>
+            </apex:pageblockSection>
+            <apex:outputPanel id="setupRequired" >
+            <apex:pageblockSection columns="1" >
+            	<apex:inputField value="{!requestupdate.ASTM_Product_Setup_Required__c}" rendered="{!showWon || requestupdate.Opportunity_Status__c == 'Won' }">
+            	<apex:actionSupport event="onchange" action="{!changeSetupReq}" rerender="SetupAddFields"/>
+            	</apex:inputField>
+            </apex:pageblockSection>
+            </apex:outputPanel>
+            <apex:outputPanel id="SetupAddFields" >
+            <apex:pageblockSection columns="1" rendered="{!setupreq || requestupdate.ASTM_Product_Setup_Required__c == 'Yes' }">
+				<apex:inputField value="{!requestupdate.Contract_Start_Date__c}" />
+				<apex:inputField value="{!requestupdate.Contract_End_Date__c}" />
+				<apex:inputField value="{!requestupdate.DRM_On_or_Off__c}" />
+				<apex:inputField value="{!requestupdate.Forced_Login__c}" />
+				<apex:inputField value="{!requestupdate.Watermark__c}" />
+				<apex:inputField value="{!requestupdate.Usage_Reports_Hidden__c}" />
+				<apex:inputField value="{!requestupdate.Counter_Subscription__c}" />
+				<apex:inputField value="{!requestupdate.IP_Address_Type__c}" Required="true">
+            		<apex:actionSupport event="onchange" action="{!changeIPReq}" rerender="AppletURL"/>
+            	</apex:inputField>
+            </apex:pageblockSection>
+            </apex:outputPanel>
+			<apex:outputPanel id="AppletURL" >
+            <apex:pageblockSection columns="1" rendered="{!appurl || requestupdate.IP_Address_Type__c == 'Applet' }" >
+ 					<apex:inputField value="{!requestupdate.URL__c}" />
+			</apex:pageblockSection>
+			</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

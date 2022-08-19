@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Mix__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Mix</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom Collections</fullName>
+                <default>false</default>
+                <label>Custom Collections</label>
+            </value>
+            <value>
+                <fullName>Add&apos;l Site Added to Existing Account</fullName>
+                <default>false</default>
+                <label>Add&apos;l Site Added to Existing Account</label>
+            </value>
+            <value>
+                <fullName>All DL Journals</fullName>
+                <default>false</default>
+                <label>All DL Journals</label>
+            </value>
+            <value>
+                <fullName>DL Complete</fullName>
+                <default>false</default>
+                <label>DL Complete</label>
+            </value>
+            <value>
+                <fullName>BOS Compass Custom</fullName>
+                <default>false</default>
+                <label>BOS Compass Custom</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 7</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 7</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 8</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 8</label>
+            </value>
+            <value>
+                <fullName>BOS Section 1 Volume 9</fullName>
+                <default>false</default>
+                <label>BOS Section 1 Volume 9</label>
+            </value>
+            <value>
+                <fullName>BOS Section 10 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 10 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 10 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 10 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 10 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 10 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 10 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 10 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 7</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 7</label>
+            </value>
+            <value>
+                <fullName>BOS Section 11 Volume 8</fullName>
+                <default>false</default>
+                <label>BOS Section 11 Volume 8</label>
+            </value>
+            <value>
+                <fullName>BOS Section 12 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 12 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 12 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 12 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 13 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 13 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 13 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 13 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 14 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 14 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 14 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 14 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 14 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 14 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 14 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 14 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 10</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 10</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 11</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 11</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 12</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 12</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 7</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 7</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 8</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 8</label>
+            </value>
+            <value>
+                <fullName>BOS Section 15 Volume 9</fullName>
+                <default>false</default>
+                <label>BOS Section 15 Volume 9</label>
+            </value>
+            <value>
+                <fullName>BOS Section 2 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 2 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 2 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 2 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 2 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 2 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 2 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 2 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 2 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 2 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 3 Volume 7</fullName>
+                <default>false</default>
+                <label>BOS Section 3 Volume 7</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 10</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 10</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 11</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 11</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 12</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 12</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 13</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 13</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 7</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 7</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 8</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 8</label>
+            </value>
+            <value>
+                <fullName>BOS Section 4 Volume 9</fullName>
+                <default>false</default>
+                <label>BOS Section 4 Volume 9</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 5</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 5</label>
+            </value>
+            <value>
+                <fullName>BOS Section 5 Volume 6</fullName>
+                <default>false</default>
+                <label>BOS Section 5 Volume 6</label>
+            </value>
+            <value>
+                <fullName>BOS Section 6 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 6 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 6 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 6 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 6 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 6 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 6 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 6 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 7 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 7 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 7 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 7 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 8 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 8 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 8 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 8 Volume 2</label>
+            </value>
+            <value>
+                <fullName>BOS Section 8 Volume 3</fullName>
+                <default>false</default>
+                <label>BOS Section 8 Volume 3</label>
+            </value>
+            <value>
+                <fullName>BOS Section 8 Volume 4</fullName>
+                <default>false</default>
+                <label>BOS Section 8 Volume 4</label>
+            </value>
+            <value>
+                <fullName>BOS Section 9 Volume 1</fullName>
+                <default>false</default>
+                <label>BOS Section 9 Volume 1</label>
+            </value>
+            <value>
+                <fullName>BOS Section 9 Volume 2</fullName>
+                <default>false</default>
+                <label>BOS Section 9 Volume 2</label>
+            </value>
+            <value>
+                <fullName>Compass PLUS ASTM Standards</fullName>
+                <default>false</default>
+                <label>Compass PLUS ASTM Standards</label>
+            </value>
+            <value>
+                <fullName>Custom Collection of Standards</fullName>
+                <default>false</default>
+                <label>Custom Collection of Standards</label>
+            </value>
+            <value>
+                <fullName>Section 01 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 01 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 02 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 02 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 03 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 03 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 04 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 04 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 05 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 05 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 06 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 06 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 07 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 07 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 08 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 08 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 09 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 09 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 10 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 10 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 11 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 11 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 12 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 12 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 13 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 13 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 14 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 14 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Section 15 Compass Subscription</fullName>
+                <default>false</default>
+                <label>Section 15 Compass Subscription</label>
+            </value>
+            <value>
+                <fullName>Standard(s) Added to Current Sub</fullName>
+                <default>false</default>
+                <label>Standard(s) Added to Current Sub</label>
+            </value>
+            <value>
+                <fullName>TBD</fullName>
+                <default>false</default>
+                <label>TBD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

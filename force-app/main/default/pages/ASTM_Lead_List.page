@@ -1,0 +1,5 @@
+<apex:page standardController="Lead"
+  recordsetvar="a"
+  extensions="skuid.Redirects"
+  action="{!redirect}?objectType=Lead&actionType=Tab">
+</apex:page>

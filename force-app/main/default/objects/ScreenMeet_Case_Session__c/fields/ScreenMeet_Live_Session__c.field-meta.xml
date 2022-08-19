@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ScreenMeet_Live_Session__c</fullName>
+    <externalId>false</externalId>
+    <label>ScreenMeet Live Session</label>
+    <referenceTo>screenmeet__Live_Session__c</referenceTo>
+    <relationshipLabel>ScreenMeet Case Sessions</relationshipLabel>
+    <relationshipName>ScreenMeet_Case_Sessions</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

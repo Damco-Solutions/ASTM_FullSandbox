@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Level 2</name>
+    <queueMembers>
+        <users>
+            <user>plugo@astm.org</user>
+            <user>tmarrero@astm.org</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Support</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

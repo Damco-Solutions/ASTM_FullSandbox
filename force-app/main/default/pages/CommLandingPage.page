@@ -1,0 +1,103 @@
+<apex:page id="CommunityLandingPage" showHeader="true" sidebar="false" standardStylesheets="false" controller="CommunitiesController" >
+
+<apex:pageBlock title="Welcome {!UserAccount.Name}!" id="selected">
+Welcome to the ASTM Royalty Request system!<br/><br/>
+    **<b>PLEASE NOTE:</b> In order to be in accordance with Salesforce requirements and industry best practices, as of July 22nd, 2017, the ASTM Reseller Community will require all users to connect to the portal using methods that are compatible with TLS 1.1 and above. Connections from mobile and web browsers may be impacted. 
+To ensure that you are meeting the correct security requirements, please contact your organizations system administrator.
+</apex:pageBlock>
+<apex:form >
+<apex:pageBlock title="{!$ObjectType.Royalty_Request__c.LabelPlural}" id="selected">
+	    <apex:pageblockTable value="{!Requests}" var="r">
+	        <apex:column >
+                <apex:facet name="header">Action</apex:facet>
+                <apex:commandLink value="View" action="{!viewRequestDetail}" rendered="{!r.Approval_Status__c != 'Approved'}">
+                	<apex:param value="{!r.Id}" assignTo="{!toSelect}" name="toSelect"/>
+               	</apex:commandLink><apex:outputtext rendered="{!r.Approval_Status__c != 'Approved'}">&nbsp;|&nbsp;</apex:outputtext>
+               	<apex:commandLink value="Edit" action="{!editRequest}" rendered="{!r.Approval_Status__c != 'Approved'}">
+                	<apex:param value="{!r.Id}" assignTo="{!toSelect}" name="toSelect"/>
+               	</apex:commandLink>
+                <apex:commandLink value="Update" action="{!updateRequest}" rendered="{!r.Approval_Status__c == 'Approved'}"   >
+                	<apex:param value="{!r.Id}" assignTo="{!toSelect}" name="toSelect"/>
+                </apex:commandLink>
+            </apex:column>
+	        <apex:column headerValue="Request Number" value="{!r.Name}"/>
+
+	        <apex:column headerValue="Account">
+	            <apex:outputField value="{!r.Community_Account__c}" />
+	        </apex:column>
+	        
+	        <apex:column headerValue="{!$ObjectType.Royalty_Request__c.Fields.Approval_Status__c.Label}">
+	            <apex:outputField value="{!r.Approval_Status__c}"/>
+	        </apex:column>
+
+	        <apex:column headerValue="Request Date">
+	            <apex:outputField value="{!r.CreatedDate}" />
+	        </apex:column>
+	        
+	        <apex:column headerValue="Royalty Amount">
+	            <apex:outputField value="{!r.Royalty_Amount__c}" />
+	        </apex:column>
+	        
+	        <apex:column headerValue="Royalty Expiration Date">
+	            <apex:outputField value="{!r.Royalty_Expiration_Date__c}" />
+	        </apex:column>
+	        <apex:column headerValue="Reseller Comments">
+	            <apex:outputField value="{!r.Misc_Comments__c}" />
+	        </apex:column>
+	        
+	        <apex:column headerValue="ASTM Comments">
+	            <apex:outputField value="{!r.Comments__c}" />
+	        </apex:column>
+	    </apex:pageblockTable>
+	
+	    <apex:pageBlockButtons >
+	        <apex:commandButton action="{!newRequest}" value="Create New Request"/>
+	    </apex:pageBlockButtons>
+	
+	</apex:pageBlock>
+	<apex:outputPanel id="closedrequests" >
+        <apex:pageBlock title="Closed Requests" id="selected2">
+            <apex:pageblockTable value="{!closedrequests}" var="cr">
+                
+                <apex:column >
+                    <apex:facet name="header">Action</apex:facet>
+                    <apex:commandLink value="Amend" action="{!cloneRequest}" rendered="{!cr.Approval_Status__c != 'Pending'}">
+                        <apex:param value="{!cr.Id}" assignTo="{!toSelect}" name="toSelect"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column headerValue="Request Number" value="{!cr.Name}"/>
+    
+                <apex:column headerValue="Account">
+                    <apex:outputField value="{!cr.Community_Account__c}" />
+                </apex:column>
+                
+                <apex:column headerValue="{!$ObjectType.Royalty_Request__c.Fields.Opportunity_Status__c.Label}">
+                    <apex:outputField value="{!cr.Opportunity_Status__c}"/>
+                </apex:column>
+    
+                <apex:column headerValue="Request Date">
+                    <apex:outputField value="{!cr.CreatedDate}" />
+                </apex:column>
+                
+                <apex:column headerValue="Royalty Amount">
+                    <apex:outputField value="{!cr.Royalty_Amount__c}" />
+                </apex:column>
+                
+                <apex:column headerValue="Royalty Expiration Date">
+                    <apex:outputField value="{!cr.Royalty_Expiration_Date__c}" />
+                </apex:column>
+                <apex:column headerValue="Reseller Comments">
+                    <apex:outputField value="{!cr.Misc_Comments__c}" />
+                </apex:column>
+                
+                <apex:column headerValue="ASTM Comments">
+                    <apex:outputField value="{!cr.Comments__c}" />
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton action="{!viewClosed}" value="View All" reRender="closedrequests" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:outputPanel>
+	</apex:form>
+</apex:page>

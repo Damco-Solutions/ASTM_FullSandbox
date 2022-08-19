@@ -1,0 +1,8 @@
+<!--
+ - Created by johnpernock from OpenGate Consulting on 11/14/19.
+ -->
+
+<design:component>
+    <design:attribute name="showRoyaltyPaymentsOnly" label="Show Only Royalties"/>
+    <design:attribute name="titleText" label="Table Title Text"/>
+</design:component>

@@ -1,0 +1,5 @@
+<apex:page standardController="Royalty_Request__c"
+  recordsetvar="a"
+  extensions="skuid.Redirects"
+  action="{!redirect}?objectType=Royalty_Request__c&actionType=Tab">
+</apex:page>

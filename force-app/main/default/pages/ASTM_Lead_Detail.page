@@ -1,0 +1,4 @@
+<apex:page standardController="Lead"
+  extensions="skuid.Redirects"
+  action="{!redirect}?objectType=Lead&actionType=View">
+</apex:page>

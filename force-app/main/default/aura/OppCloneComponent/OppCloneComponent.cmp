@@ -1,0 +1,172 @@
+<!--
+ - Created by johnpernock from OpenGate Consulting on 2019-07-02.
+ -->
+
+<aura:component description="OppCloneComponent" controller="OppCloneComponentController" implements="force:hasRecordId,lightning:actionOverride,force:lightningQuickAction,force:hasSObjectName">
+    <aura:attribute name="origOpplineItems" type="OpportunityLineItem[]" default="[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="origOpp" type="Opportunity"/>
+    <aura:attribute name="oppLinePercentageIncrease" type="Decimal" default="3"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="showProducts" type="Boolean" default="false" />
+    <aura:attribute name="ihsOpp" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.oppLinePercentageIncrease}" action="{!c.updateOppLineItemPrice}"/>
+    <!-- Start of Form And Layout -->
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner />
+    </aura:if>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <lightning:recordEditForm aura:id="oppRecordClone"
+                              objectApiName="{! v.sObjectName }"
+                              recordId="{!v.recordId }"
+                              onsubmit="{!c.onSubmitAction}"
+                              onload="{!c.handleLoad}"
+    >
+    <lightning:messages />
+    <div class="slds-clearfix">
+        <div class="slds-m-bottom_medium slds-float--right">
+            <lightning:button variant="brand" type="submit" name="save" label="Save Cloned Opportunity" iconName="utility:check" iconPosition="left"/>
+        </div>
+    </div>
+        <aura:if isTrue="{!not(v.ihsOpp)}">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Basics</h3>
+                <lightning:inputField fieldName="AccountId" aura:id="AccountId"/>
+                <lightning:inputField fieldName="OwnerId" aura:id="OwnerId"/>
+                <lightning:inputField fieldName="Name" aura:id="Name"/>
+                <lightning:inputField fieldName="LeadSource" aura:id="LeadSource"/>
+                <lightning:inputField fieldName="CreatedDate" disabled="true" />
+                <lightning:inputField fieldName="Description" aura:id="Description"/>
+                
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Opportunity Details</h3>
+                <lightning:inputField fieldName="StageName" aura:id="StageName"/>
+                <lightning:inputField fieldName="Probability" aura:id="Probability"/>
+                <lightning:inputField fieldName="CloseDate" aura:id="CloseDate"/>
+                <lightning:inputField fieldName="Amount" aura:id="Amount"/>
+                <lightning:inputField fieldName="Contract_Required__c" aura:id="Contract_Required__c"/>
+                <lightning:inputField fieldName="Managed_vs_Non_Managed__c" disabled="true"/>
+                <lightning:inputField fieldName="Demo__c" aura:id="Demo__c"/>
+            </div>
+        </div>
+            <!--Modified for Account Information on Clone Opp By Damco-->
+             <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Account Details</h3>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Community_Account__c" aura:id="Community_Account__c"/>
+                        <lightning:inputField fieldName="Account_Street__c" aura:id="Account_Street__c"/> <!--Sakshi-->
+                        <lightning:inputField fieldName="Account_City__c" aura:id="Account_City__c"/>
+                        <lightning:inputField fieldName="Account_State__c" aura:id="Account_State__c"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Account_Postal_Code__c" aura:id="Account_Postal_Code__c"/>
+                        <lightning:inputField fieldName="Account_Country__c" aura:id="Account_Country__c"/>
+                        <lightning:inputField fieldName="Existing_Revenue__c" aura:id="Existing_Revenue__c"/>
+                    </div>
+                </div>
+            </div>
+        </div> <!--End -->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Detailed Info</h3>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Number_Of_Locations__c" aura:id="Number_Of_Locations__c"/>
+                        <lightning:inputField fieldName="Number_Of_Potential_Locations__c" aura:id="Number_Of_Potential_Locations__c"/>
+                        <lightning:inputField fieldName="Purchase_Order_Number__c" aura:id="Purchase_Order_Number__c"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Type" aura:id="Type"/>
+                        <lightning:inputField fieldName="Subscription_Code_Type__c" aura:id="Subscription_Code_Type__c"/>
+                        <lightning:inputField fieldName="Are_IP_Addresses_Included__c" aura:id="Are_IP_Addresses_Included__c"/>
+                        <lightning:inputField fieldName="AR_Invoice_Type__c" aura:id="AR_Invoice_Type__c"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:inputField fieldName="Required_Log_In__c" aura:id="Required_Log_In__c"/>
+                    <lightning:inputField fieldName="Industry_Tag__c" aura:id="Industry_Tag__c"/>
+                    <lightning:inputField fieldName="Field_Suppression__c" aura:id="Field_Suppression__c"/>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:inputField fieldName="Usage_Admin_Name__c" aura:id="Usage_Admin_Name__c"/>
+                    <lightning:inputField fieldName="Usage_Admin_Email__c" aura:id="Usage_Admin_Email__c"/>
+                    <lightning:inputField fieldName="Usage_Viewed_By__c" aura:id="Usage_Viewed_By__c"/>
+                    <lightning:inputField fieldName="Registration_Form__c" aura:id="Registration_Form__c"/>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Authentication</h3>
+                    <lightning:inputField fieldName="IP_Addresses__c" aura:id="IP_Addresses__c"/>
+                    <lightning:inputField fieldName="Applet_URL__c" aura:id="Applet_URL__c"/>
+                    <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Notification Security &amp; Member Dash</h3>
+                    <lightning:inputField fieldName="Notify_for_Renewal__c" aura:id="Notify_for_Renewal__c"/>
+                    <lightning:inputField fieldName="Watermark__c" aura:id="Watermark__c"/>
+                    <lightning:inputField fieldName="Member_Dashboard_Domain__c" aura:id="Member_Dashboard_Domain__c"/>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">DRM &amp; SSO Info</h3>
+                    <lightning:inputField fieldName="DRM__c" aura:id="DRM__c"/>
+                    <lightning:inputField fieldName="Custom_Settings__c" aura:id="Custom_Settings__c"/>
+                    <lightning:inputField fieldName="Shibboleth_Open_Athens_URL__c" aura:id="Shibboleth_Open_Athens_URL__c"/>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Name" aura:id="Name"/>
+                        <lightning:inputField fieldName="AccountId" aura:id="AccountId"/>
+                        <lightning:inputField fieldName="Type" aura:id="Type"/>
+                        <lightning:inputField fieldName="Number_Of_Locations__c" aura:id="Number_Of_Locations__c"/>
+<!--                        <lightning:inputField fieldName="Number_of_LMS_Locations__c" aura:id="Number_of_LMS_Locations__c"/>-->
+                        <lightning:inputField fieldName="Description" aura:id="Description"/>
+<!--                        <lightning:inputField fieldName="Contract_End_Date_automated__c" aura:id="Contract_End_Date_automated__c" disabled="true"/>-->
+<!--                        <lightning:inputField fieldName="Number_of_Months__c" aura:id="Number_of_Months__c"/>-->
+                        <lightning:inputField fieldName="Watermark__c" aura:id="Watermark__c"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="OwnerId" aura:id="OwnerId"/>
+                        <lightning:inputField fieldName="StageName" aura:id="StageName"/>
+                        <lightning:inputField fieldName="Probability" aura:id="Probability"/>
+                        <lightning:inputField fieldName="CloseDate" aura:id="CloseDate"/>
+                        <lightning:inputField fieldName="Managed_vs_Non_Managed__c" disabled="true"/>
+                        <lightning:inputField fieldName="Contract_Required__c" aura:id="Contract_Required__c"/>
+                        <lightning:inputField fieldName="Amount" aura:id="Amount"/>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Account &amp; Usage Information</h3>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField fieldName="Industry_Tag__c" aura:id="Industry_Tag__c"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    <h3 class="slds-section-title--divider" style="color:rgba(60, 74, 164, 1.0);font-weight:bold;border-radius:5px;">Product Details</h3>
+    <div class="slds-grid slds-gutters slds-m-bottom_medium">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input type="number" name="lineItemPercentIncrease" label="Percentage Increase" value="{!v.oppLinePercentageIncrease}" minlength="1" maxlength="2" min="0" max="100" step="1"/>
+        </div>
+    </div>
+    <lightning:datatable data="{!v.origOpplineItems}" columns="{!v.columns}" hideCheckboxColumn="true" suppressBottomBar="true" showRowNumberColumn="false" keyField="Id"/>
+    <div class="slds-clearfix">
+        <div class="slds-m-top_medium slds-float--right">
+            <lightning:button variant="brand" type="submit" name="save" label="Save Cloned Opportunity" iconName="utility:check" iconPosition="left"/>
+        </div>
+    </div>
+    </lightning:recordEditForm>
+</aura:component>
