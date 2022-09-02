@@ -479,8 +479,8 @@
             <label>If Status changed to &apos;Denied&apos;</label>
         </rules>
     </decisions>
-    <interviewLabel>Set_Approval_Process_for_Tech_street_Opportunities-5_InterviewLabel</interviewLabel>
-    <label>Set Approval Process for Tech street Opportunities</label>
+    <interviewLabel>Set_Approval_Process_for_Tech_street_Opportunities-6_InterviewLabel</interviewLabel>
+    <label>Set Approval Process for Tech street Opportunities v.0</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
@@ -623,42 +623,6 @@
                 <stringValue>Pending</stringValue>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Regional Approver Email</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Regional_Approver_Email_Workflow__c</field>
-            <value>
-                <elementReference>myVariable_current.Account.Country__r.Owner:User.Email</elementReference>
-            </value>
-        </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
     <recordUpdates>
@@ -742,42 +706,6 @@
                 <stringValue>0123c0000008CreAAE</stringValue>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Regional Approver Email</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Regional_Approver_Email_Workflow__c</field>
-            <value>
-                <elementReference>myVariable_current.Account.Country__r.Owner:User.Email</elementReference>
-            </value>
-        </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
     <recordUpdates>
@@ -825,42 +753,6 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Regional Approver Email</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Regional_Approver_Email_Workflow__c</field>
-            <value>
-                <elementReference>myVariable_current.Account.Country__r.Owner:User.Email</elementReference>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>

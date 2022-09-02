@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Update Country Lookup on Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Country Lookup on Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Records with same Country Name</description>
+        <name>Get_Country_records</name>
+        <label>Get Country records</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Opportunity_Country_Lookup</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityCountry</elementReference>
+            </value>
+        </filters>
+        <object>Country__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opportunity_Country_Lookup</name>
+        <label>Update Opportunity Country Lookup</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Country__c</field>
+            <value>
+                <elementReference>Get_Country_records.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Regional_Approver_Email_Workflow__c</field>
+            <value>
+                <elementReference>Get_Country_records.Owner:User.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Get_Country_records</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <description>To store the Account Country value on Opportunity</description>
+        <name>OpportunityCountry</name>
+        <text>&lt;p&gt;{!$Record.Account_Country__c}&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>

@@ -84,10 +84,6 @@
                 <behavior>Required</behavior>
                 <field>CloseDate</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Regional_Approver_Email_Workflow__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -240,6 +236,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Account_Country__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Country__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Regional_Approver__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Regional_Approver_Email_Workflow__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
