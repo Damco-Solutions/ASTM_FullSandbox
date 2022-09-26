@@ -8,7 +8,7 @@
     <enableInlineEdit>true</enableInlineEdit>
     <enableNewPageLayoutEditor>true</enableNewPageLayoutEditor>
     <enableProfileCustomTabsets>true</enableProfileCustomTabsets>
-    <enableQuickCreate>false</enableQuickCreate>
+    <enableQuickCreate>true</enableQuickCreate>
     <enableTabOrganizer>true</enableTabOrganizer>
     <isCustomObjectTruncateEnabled xsi:nil="true"/>
 </UserInterfaceSettings>

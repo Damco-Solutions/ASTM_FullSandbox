@@ -60,7 +60,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <startElementReference>Get_Country_records</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <textTemplates>
         <description>To store the Account Country value on Opportunity</description>
         <name>OpportunityCountry</name>

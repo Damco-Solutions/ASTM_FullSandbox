@@ -212,4 +212,8 @@
         <name>Profile2PermSet__Profiles_to_Permission_Sets</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>guar__GUAR_Admin</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

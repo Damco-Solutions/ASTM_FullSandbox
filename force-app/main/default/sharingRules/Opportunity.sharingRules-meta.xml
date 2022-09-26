@@ -14,6 +14,20 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Internal_ASTM_Users_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Internal ASTM Users 2</label>
+        <sharedTo>
+            <group>InternalASTMusers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Business Dev Opps</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
     <sharingOwnerRules>
         <fullName>Business_Development</fullName>
         <accessLevel>Edit</accessLevel>
@@ -23,17 +37,6 @@
         </sharedTo>
         <sharedFrom>
             <role>Business_Development</role>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>InternalASTMusers</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>Internal ASTM users</label>
-        <sharedTo>
-            <group>InternalASTMusers</group>
-        </sharedTo>
-        <sharedFrom>
-            <allInternalUsers></allInternalUsers>
         </sharedFrom>
     </sharingOwnerRules>
     <sharingOwnerRules>

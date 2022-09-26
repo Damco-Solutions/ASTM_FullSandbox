@@ -416,6 +416,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>WebtoCaseEmailServiceHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ZendeskTicketDeleteSchedulable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
