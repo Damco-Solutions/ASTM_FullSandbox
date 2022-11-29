@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Queue Assignment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Queue Assignments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Queue Assignment --></label>
+        <name>Queue_Assignment__c</name>
+        <picklistValues>
+            <masterLabel>AENOR</masterLabel>
+            <translation><!-- AENOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AWWA</masterLabel>
+            <translation><!-- AWWA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accounting</masterLabel>
+            <translation><!-- Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCRL</masterLabel>
+            <translation><!-- CCRL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CGA</masterLabel>
+            <translation><!-- CGA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IES</masterLabel>
+            <translation><!-- IES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISS Internal</masterLabel>
+            <translation><!-- ISS Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISS Mgt</masterLabel>
+            <translation><!-- ISS Mgt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 2</masterLabel>
+            <translation><!-- Level 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTP</masterLabel>
+            <translation><!-- PTP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCO</masterLabel>
+            <translation><!-- TCO --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

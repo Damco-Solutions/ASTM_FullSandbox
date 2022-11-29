@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Auto Response</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>AWWA</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_AWWA</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>CGA</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_CGA</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>AENOR</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_AENOR</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>API</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_API_Compass</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>IES</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_IES</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>service-webform@astm.org</senderEmail>
+            <senderName>ASTM Web Inquiry</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_Support</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>Service</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_Service</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>Support</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@astm.org</senderEmail>
+            <senderName>Do Not Reply</senderName>
+            <template>ISS_Auto_Response_Templates/Case_Auto_Response_Support</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

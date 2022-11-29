@@ -6,7 +6,7 @@
     <aura:attribute name="origOpplineItems" type="OpportunityLineItem[]" default="[]"/>
     <aura:attribute name="columns" type="List"/>
     <aura:attribute name="origOpp" type="Opportunity"/>
-    <aura:attribute name="oppLinePercentageIncrease" type="Decimal" default="3"/>
+    <aura:attribute name="oppLinePercentageIncrease" type="Decimal" default="5"/>
     <aura:attribute name="showSpinner" type="Boolean" default="true" />
     <aura:attribute name="showProducts" type="Boolean" default="false" />
     <aura:attribute name="ihsOpp" type="Boolean" default="false" />

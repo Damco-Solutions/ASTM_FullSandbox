@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_Payments</name>
+        <label>Create Payments</label>
+        <locationX>760</locationX>
+        <locationY>60</locationY>
+        <actionName>RoyaltyPaymentActions</actionName>
+        <actionType>apex</actionType>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>If_TRUE_Create_Royalty_Payments</name>
+        <label>If TRUE Create Royalty Payments</label>
+        <locationX>498</locationX>
+        <locationY>54</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_to_Run_Job_to_Create_Royalty_Payments</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Payments</targetReference>
+            </connector>
+            <label>If True</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Create Royalty Payments from Requests {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Royalty Payments from Requests</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Create_Payments_from_Royalty_Requests</name>
+        <label>Create Payments from Royalty Requests</label>
+        <locationX>342</locationX>
+        <locationY>54</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>If_TRUE_Create_Royalty_Payments</targetReference>
+        </connector>
+        <fields>
+            <name>Check_to_Run_Job_to_Create_Royalty_Payments</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>false</booleanValue>
+            </defaultValue>
+            <fieldText>Check to Run Job to Create Royalty Payments</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Create_Payments_from_Royalty_Requests</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>
