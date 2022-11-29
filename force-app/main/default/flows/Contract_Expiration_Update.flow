@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <formulas>
+        <name>CaseOwnerProfile</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Owner.Profile.Name}</expression>
+    </formulas>
+    <interviewLabel>Contract Expiration Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract Expiration Update to trigger notifications v.0</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update Contract Expiration Notice value</description>
+        <name>Update_Expiration_Notice</name>
+        <label>Update Expiration Notice</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Owner_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ResellerCommunityUserWhiteLabel</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Owner_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RoyaltyProfile</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerExpirationNotice</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Expiration_Notice</targetReference>
+        </connector>
+        <object>Contract</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Profile name is Reseller Community User - White Label</description>
+        <name>ResellerCommunityUserWhiteLabel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Reseller Community User - White Label</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>RoyaltyProfile</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Reseller Community User - Royalty</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>SystemAdminfortestonly</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>System Administrator</stringValue>
+        </value>
+    </variables>
+</Flow>

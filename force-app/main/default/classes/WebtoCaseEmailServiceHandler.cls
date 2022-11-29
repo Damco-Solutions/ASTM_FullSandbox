@@ -26,48 +26,48 @@ global class WebtoCaseEmailServiceHandler implements Messaging.InboundEmailHandl
             system.debug('subject is ' + subject);//Testing
             String GetrefId = subject.substringBetween('Case#[',']');
             system.debug('GetrefId is ' + GetrefId);//Testing
-            Boolean EmailIsResponse =  subject.startsWith('Re:');
-            system.debug('EmailIsResponse' +EmailIsResponse);
+           // Boolean EmailIsResponse =  subject.startsWith('Re:');
+            //system.debug('EmailIsResponse' +EmailIsResponse);
             
-            if(EmailIsResponse){
-                /* Task ts = new Task();
-ts.Subject = email.subject;
-ts.TaskSubtype = 'Email';
-ts.ActivityDate = Date.today();
-ts.Description = email.plainTextBody;
-ts.Type = 'Email';
-
-if(GetrefId!=null)
-{
-String concat = GetrefId.substring(0,3);
-if(concat=='006'){
-ts.WhatID= GetrefId;
-system.debug('Inside task');
-}
-else
-{
-//ts.WhatID=GetrefId;
-EM.RelatedToId=GetrefId;
-
-}
-//ts.WhoID       =  GetrefId;
-ts.Status = 'Completed';
-insert ts;
-insert EM;
-system.debug('task' +ts);
-}
-List<Case> OppinUse = [Select Id,Description FROM Case WHERE Id = :GetrefId];
-system.debug('OppinUse' +OppinUse);
-List<ContentVersion> attList = new List<ContentVersion>();
-// This will extract all blob attachments from email
-// For text type attachment Messaging.Inboundemail.TextAttachment can be used
-
-for(Case opp :OppinUse){
-//opp.Pricing_Request__c = system.today();
-opp.Description = 'test Description';
-system.debug('in for loop');
-}
-Update OppinUse;*/
+            //if(EmailIsResponse){
+               /* Task ts = new Task();
+                ts.Subject = email.subject;
+                ts.TaskSubtype = 'Email';
+                ts.ActivityDate = Date.today();
+                ts.Description = email.plainTextBody;
+                ts.Type = 'Email';
+                
+                if(GetrefId!=null)
+                {
+                    String concat = GetrefId.substring(0,3);
+                    if(concat=='006'){
+                        ts.WhatID= GetrefId;
+                        system.debug('Inside task');
+                    }
+                    else
+                    {
+                        //ts.WhatID=GetrefId;
+                        EM.RelatedToId=GetrefId;
+                        
+                    }
+                    //ts.WhoID       =  GetrefId;
+                    ts.Status = 'Completed';
+                    //insert ts;
+                    insert EM;
+                    system.debug('task' +ts);
+                }
+                List<Case> OppinUse = [Select Id,Description FROM Case WHERE Id = :GetrefId];
+                system.debug('OppinUse' +OppinUse);
+                List<ContentVersion> attList = new List<ContentVersion>();
+                // This will extract all blob attachments from email
+                // For text type attachment Messaging.Inboundemail.TextAttachment can be used
+                
+                for(Case opp :OppinUse){
+                    //opp.Pricing_Request__c = system.today();
+                    opp.Description = 'test Description';
+                    system.debug('in for loop');
+                }
+                Update OppinUse;*/
                 
                 
                 if(email.binaryAttachments !=null){
@@ -93,6 +93,10 @@ Update OppinUse;*/
                     if(!caselist.isEmpty()){
                         caseObj=caselist.get(0);
                         system.debug('case'+caseObj);
+                        EM.RelatedToId=caseObj.Id;
+                        insert EM;
+                        system.debug('email responded coming');
+                        
                         cvList = [select id, ContentDocumentId from ContentVersion WHERE Id in :cvList];
                         for (ContentVersion cv : cvList) {
                             ContentDocumentLink cl = new ContentDocumentLink();
@@ -103,14 +107,25 @@ Update OppinUse;*/
                             cdlList.add(cl);
                             
                         }
+                        
                         if(cdlList.size()>0){
                             insert cdlList; 
                         }
                         system.debug('FileRecordInserted22' +cdlList);
                     }
                 }
+                else{
+                    Case caseObj2;
+                    List<Case> caselist1=[select id from case where CaseNumber=:GetrefId];
+                    if(!caselist1.isEmpty()){
+                    caseObj2=caselist1.get(0);
+                    EM.RelatedToId=caseObj2.Id;
+                        insert EM; 
+                    } 
+                }
+                 
                 
-            }
+            
             
             // System.debug('New Task Object: ' + vCon.name+vCon.id);   
         }

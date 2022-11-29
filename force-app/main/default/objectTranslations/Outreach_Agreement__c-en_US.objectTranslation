@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Outreach Agreement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Outreach Agreements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name (Text) --></label>
+        <name>Account_Name_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- Outreach Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agreement End Date --></label>
+        <name>Agreement_End_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Start Date --></label>
+        <name>Agreement_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminder Date --></label>
+        <name>Reminder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminder Date is Today --></label>
+        <name>Reminder_Date_is_Today__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Draft</masterLabel>
+            <translation><!-- In Draft --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Copyright Agreement</masterLabel>
+            <translation><!-- Copyright Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liaison Agreement</masterLabel>
+            <translation><!-- Liaison Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>License</masterLabel>
+            <translation><!-- License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOC – Global</masterLabel>
+            <translation><!-- MOC – Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOU – Other</masterLabel>
+            <translation><!-- MOU – Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOU-Global</masterLabel>
+            <translation><!-- MOU-Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No-Bid Contract</masterLabel>
+            <translation><!-- No-Bid Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSDO</masterLabel>
+            <translation><!-- PSDO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilot Project</masterLabel>
+            <translation><!-- Pilot Project --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Lightning Outreach Agreement Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Outreach Agreement Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

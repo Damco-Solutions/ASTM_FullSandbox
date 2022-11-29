@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Escalated PTP</name>
+    <queueMembers>
+        <users>
+            <user>ameacock@astm.org</user>
+            <user>hbucci@astm.org</user>
+            <user>jkennedy@astm.org</user>
+            <user>jboone@astm.org</user>
+            <user>rmcelwee@astm.org</user>
+            <user>tharris@astm.org</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

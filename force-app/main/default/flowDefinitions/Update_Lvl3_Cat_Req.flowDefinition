@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>6</activeVersionNumber>
+    <description>Migrated from the: Update Lvl3 Cat Req workflow rule
+Workflow rule description: Update Case Owner value to &quot;Level 3&quot; when case Escalation Level is changed to &quot;Level 3&quot;</description>
+    <masterLabel>Update Lvl3 Case Owner</masterLabel>
+</FlowDefinition>

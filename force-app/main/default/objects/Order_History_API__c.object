@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Store settings to connect to Order History API on Azure</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Azure_AD_Tenant_Id__c</fullName>
+        <description>Unique identifier from ASTM generated on Azure - similar to - 9b80e88e-980b-4d70-b324-773d329f445d</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique identifier from ASTM generated on Azure - similar to - 9b80e88e-980b-4d70-b324-773d329f445d</inlineHelpText>
+        <label>Azure AD Tenant Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Azure_Client_ID__c</fullName>
+        <description>Client ID from the Azure application - get from ASTM IT Team - similar to 61c231f5-b694-1234-92e4-e2ea2b89944c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client ID from the Azure application - get from ASTM IT Team - similar to 61c231f5-b694-1234-92e4-e2ea2b89944c</inlineHelpText>
+        <label>Azure Client ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Azure_Client_Secret__c</fullName>
+        <description>Client Secre from the Azure application - get from ASTM IT Team - similar to o2MMZn/7qqNeCnV12Nzybcd35x13U/FavvctvbDp9cM=</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client Secre from the Azure application - get from ASTM IT Team - similar to o2MMZn/7qqNeCnV12Nzybcd35x13U/FavvctvbDp9cM=</inlineHelpText>
+        <label>Azure Client Secret</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Middleware_App_ID__c</fullName>
+        <description>URL for the order history server api - similar to https://astm.org/72b79085-c072-4221-827f-b9eb92eb9d71</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for the order history server api - similar to https://astm.org/72b79085-c072-4221-827f-b9eb92eb9d71</inlineHelpText>
+        <label>Middleware App ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Middleware_Client_ID__c</fullName>
+        <description>Client Id for the order history api - similar to - 4d56bae03ec34c0a911182d4c228aa6c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client Id for the order history api - similar to - 4d56bae03ec34c0a911182d4c228aa6c</inlineHelpText>
+        <label>Middleware Client ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Middleware_Client_Key__c</fullName>
+        <description>Client Key for order history api - similar to - b93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps352diuabc=</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client Key for order history api - similar to - b93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps352diuabc=</inlineHelpText>
+        <label>Middleware Client Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Middleware_Request_URL__c</fullName>
+        <description>Order history api request url - similar to - https://rtdb-astm-dev.azurewebsites.net/apiconnector/</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order history api request url - similar to - https://rtdb-astm-dev.azurewebsites.net/apiconnector/</inlineHelpText>
+        <label>Middleware Request URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order History API</label>
+    <visibility>Public</visibility>
+</CustomObject>

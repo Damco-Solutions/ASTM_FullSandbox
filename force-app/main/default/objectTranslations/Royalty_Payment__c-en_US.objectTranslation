@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Royalty Payment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Royalty Payments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Received from Reseller --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle Acct Number --></label>
+        <name>Oracle_Acct_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Royalty Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reseller --></label>
+        <name>Reseller__c</name>
+        <relationshipLabel><!-- Royalty Payments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Royalty Amount --></label>
+        <name>Royalty_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Ship &amp; Bill</masterLabel>
+            <translation><!-- Ship &amp; Bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription</masterLabel>
+            <translation><!-- Subscription --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Royalty Payment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
