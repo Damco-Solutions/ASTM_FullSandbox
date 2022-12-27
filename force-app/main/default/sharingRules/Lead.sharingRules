@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BusDev_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Only BusDev Staff can share BusDev Leads</description>
+        <label>BusDev Leads</label>
+        <sharedTo>
+            <group>AMCOE_Users</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead_Source__c</field>
+            <operation>equals</operation>
+            <value>CMDS Website Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>LeadSource</field>
+            <operation>equals</operation>
+            <value>CMDS Website Request</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Internal_ASTM_users_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>All other Leads Shared</description>
+        <label>Internal ASTM users Leads</label>
+        <sharedTo>
+            <group>InternalASTMusers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Lead_Source__c</field>
+            <operation>notEqual</operation>
+            <value>CMDS Website Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>LeadSource</field>
+            <operation>notEqual</operation>
+            <value>CMDS Website Request</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

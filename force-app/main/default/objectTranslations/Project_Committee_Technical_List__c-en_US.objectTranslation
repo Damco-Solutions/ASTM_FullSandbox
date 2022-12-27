@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Committee Technical List</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Committee Technical Lists</value>
+    </caseValues>
+    <fields>
+        <label><!-- Internal Committee --></label>
+        <name>Internal_Committee__c</name>
+        <relationshipLabel><!-- Project Committees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Committee --></label>
+        <name>Project_Committee__c</name>
+        <relationshipLabel><!-- Project Committee Technical List --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

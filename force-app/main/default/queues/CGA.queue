@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>cga@astm.org</email>
+    <name>CGA</name>
+    <queueMembers>
+        <users>
+            <user>sryan@astm.org</user>
+            <user>tmarrero@astm.org</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Support</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <assignments>
+        <name>Assign_Company_field</name>
+        <label>Assign Company field</label>
+        <locationX>235</locationX>
+        <locationY>571</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Company__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Companyformula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Related_to_Case</name>
+        <label>Related to Case?</label>
+        <locationX>230</locationX>
+        <locationY>386</locationY>
+        <defaultConnectorLabel>no</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.Id</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>500</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Company_field</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>Companyformula</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Parent.Queue_Assignment__c}  ,
+&quot;Service&quot;, &quot;service&quot;,
+&quot;Support&quot;, &quot;support&quot;,
+&quot;PTP&quot;, &quot;ptp&quot;,
+&quot;AWWA&quot;, &quot;awwa&quot;,
+&quot;API&quot;, &quot;api&quot;,
+&quot;CGA&quot;, &quot;cga&quot;,
+&quot;AENOR&quot;, &quot;aenor&quot;,
+&quot;IES&quot;, &quot;ies&quot;
+,&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Assign Company based on Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign Company based on Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>112</locationX>
+        <locationY>126</locationY>
+        <connector>
+            <targetReference>Related_to_Case</targetReference>
+        </connector>
+        <object>EmailMessage</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CaseID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

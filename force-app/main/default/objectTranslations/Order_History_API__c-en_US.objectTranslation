@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order History API</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order History API</value>
+    </caseValues>
+    <fields>
+        <help><!-- Unique identifier from ASTM generated on Azure - similar to - 9b80e88e-980b-4d70-b324-773d329f445d --></help>
+        <label><!-- Azure AD Tenant Id --></label>
+        <name>Azure_AD_Tenant_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client ID from the Azure application - get from ASTM IT Team - similar to 61c231f5-b694-1234-92e4-e2ea2b89944c --></help>
+        <label><!-- Azure Client ID --></label>
+        <name>Azure_Client_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client Secre from the Azure application - get from ASTM IT Team - similar to o2MMZn/7qqNeCnV12Nzybcd35x13U/FavvctvbDp9cM= --></help>
+        <label><!-- Azure Client Secret --></label>
+        <name>Azure_Client_Secret__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL for the order history server api - similar to https://astm.org/72b79085-c072-4221-827f-b9eb92eb9d71 --></help>
+        <label><!-- Middleware App ID --></label>
+        <name>Middleware_App_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client Id for the order history api - similar to - 4d56bae03ec34c0a911182d4c228aa6c --></help>
+        <label><!-- Middleware Client ID --></label>
+        <name>Middleware_Client_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client Key for order history api - similar to - b93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps352diuabc= --></help>
+        <label><!-- Middleware Client Key --></label>
+        <name>Middleware_Client_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order history api request url - similar to - https://rtdb-astm-dev.azurewebsites.net/apiconnector/ --></help>
+        <label><!-- Middleware Request URL --></label>
+        <name>Middleware_Request_URL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

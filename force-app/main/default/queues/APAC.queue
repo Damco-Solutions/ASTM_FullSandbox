@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>APAC</name>
+    <queueMembers>
+        <users>
+            <user>jsthomas@astm.org</user>
+            <user>zzz_c2b57f36-1e40-409c-88de-27cee166c1d1@deleted.com</user>
+            <user>zzz_3f2fbb70-df90-46a6-8460-a2a9771fcfab@deleted.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

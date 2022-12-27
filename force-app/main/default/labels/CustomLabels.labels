@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Pricebook_Id_AENOR</fullName>
+        <categories>Custom, Opportunity, InitialValues</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricebook_Id_AENOR</shortDescription>
+        <value>01s3c0000016ng0AAA</value>
+    </labels>
+    <labels>
+        <fullName>Pricebook_Id_ASTMCOMPASS</fullName>
+        <categories>Custom, Opportunity, InitialValues</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricebook_Id_ASTMCOMPASS</shortDescription>
+        <value>01sC0000000DZcYIAW</value>
+    </labels>
+    <labels>
+        <fullName>astmRoyaltyRT</fullName>
+        <categories>Custom, Opportunity, InitialValues</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>astmRory</shortDescription>
+        <value>0126C000000HTslQAG</value>
+    </labels>
+    <labels>
+        <fullName>astmWhiteLabelRT</fullName>
+        <categories>Custom, Opportunity, InitialValues</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>astmWhiteLabelRT</shortDescription>
+        <value>0126C000000HTsgQAG</value>
+    </labels>
+</CustomLabels>

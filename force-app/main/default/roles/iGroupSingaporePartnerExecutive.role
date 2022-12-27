@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>iGroup Singapore Partner Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>iGroup Singapore Partner Executive</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>DirectorsofInternationalSalesandSVC</parentRole>
+</Role>

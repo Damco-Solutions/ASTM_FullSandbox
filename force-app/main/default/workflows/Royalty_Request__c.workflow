@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Royalty_Request</fullName>
+        <description>New Royalty Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Royalty_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_related_to_Royalty_Request_Won</fullName>
+        <description>Opportunity related to Royalty Request Won</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Royalty_Request_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>RR_Opp_Status_Loss</fullName>
+        <description>RR Opp Status Loss</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/RR_Opp_Status_Loss</template>
+    </alerts>
+    <alerts>
+        <fullName>RR_Opp_Status_Pending</fullName>
+        <description>RR Opp Status Pending</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/RR_Opp_Status_Pending</template>
+    </alerts>
+    <alerts>
+        <fullName>Royalty_Request_Approved</fullName>
+        <description>Royalty Request Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Royalty_Request_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Royalty_Request_Denied</fullName>
+        <description>Royalty Request Denied</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Royalty_Request_Denied</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_RR_Email</fullName>
+        <field>Account_Owner_Email__c</field>
+        <formula>Account__r.Owner.Email</formula>
+        <name>Update RR Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>New Royalty Request</fullName>
+        <actions>
+            <name>New_Royalty_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>RR Opp Status Loss</fullName>
+        <actions>
+            <name>RR_Opp_Status_Loss</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Opportunity_Status__c</field>
+            <operation>equals</operation>
+            <value>Loss</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RR Opp Status Pending</fullName>
+        <actions>
+            <name>RR_Opp_Status_Pending</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Opportunity_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Royalty Request Approved</fullName>
+        <actions>
+            <name>Royalty_Request_Approved</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Royalty Request Denied</fullName>
+        <actions>
+            <name>Royalty_Request_Denied</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Denied</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Royalty Request Won</fullName>
+        <actions>
+            <name>Opportunity_related_to_Royalty_Request_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Opportunity_Status__c</field>
+            <operation>equals</operation>
+            <value>Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update RR Email</fullName>
+        <actions>
+            <name>Update_RR_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Royalty_Request__c.Community_Account__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>
